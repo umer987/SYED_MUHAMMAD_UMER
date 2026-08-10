@@ -2,11 +2,13 @@ import React from 'react'
 import {Routes , Route , BrowserRouter} from 'react-router-dom'
 import Home from './pages/Home'
 
+
 function App() {
   return (
     <div>
+     
         <BrowserRouter>
-        <Routes>  {/* ← Changed: Router → Routes */}
+        <Routes>  
           <Route path='/' element={<Home />} />
           
         </Routes>
