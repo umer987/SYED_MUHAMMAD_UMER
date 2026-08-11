@@ -1,31 +1,11 @@
 import React from 'react'
-
+import '@fontsource/bebas-neue';
 function Navbar() {
   return (
-    <div>
-    <nav>
-      <div className='w-[100%] h-[50px] flex justify-center items-center'>
-       <div className='md:hidden lg:hidden w-[100%] flex justify-start items-center '><h1 className='font-extrabold text-[20px] whitespace-nowrap'>S_M_U</h1> <img src="" alt="" srcset="" /> </div>
-
-<div className='md:flex w-[30%] justify-center items-center hidden'>
-        <ul className='flex gap-7 font-bold'>
-        <li>Home</li>
-        <li>About</li>
-        <li>Skills</li>
-        </ul>
-        </div>
-      
-       <div className='w-[40%] md:flex justify-center items-start hidden '><h1 className='font-extrabold text-5xl whitespace-nowrap'>SYED MUHAMMAD UMER</h1> </div>
-     <div className='md:flex w-[30%] justify-center items-center hidden'>
-        <ul className='flex gap-7 font-bold'>
-        <li>Projects</li>
-        <li>Experience</li>
-        <li>Contact</li>
-        </ul>
-        </div>
-      </div>
-      
-    </nav>
+    <div className='w-[100%] flex justify-between items-center'>
+      <div><h3 className='navtext text-[var(--text-bg)] '>FULLSTACK AND AI/ML ENGINEER</h3></div>
+      <div className='w-[1000px] h-0.5 rounded-3xl bg-[var(--text-bg)]'></div>
+      <div className='navtext flex justify-between items-center gap-2'><h3 className='text-[var(--text-bg)]'>AVALABE FOR FREELANCE</h3><div className='w-[10px] h-[10px] bg-[var(--bg-red)] rounded-full'></div> </div>
     </div>
   )
 }
