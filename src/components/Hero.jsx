@@ -13,17 +13,17 @@ function Hero() {
 
   {/* 1 - Headings */}
   <div className="order-2 md:order-1 "  >
-    <h1 className='font-bebas text-[#E7CEB0] text-2xl'>FULLSTACK ENGINEER / AI-ML ENGINEER</h1>
-    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] '>Web Development</h3>
-    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] '>Intellegent Systems</h3>
-    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] '>ML Models</h3>
+    <h1 className='font-bebas text-[#E7CEB0] text-2xl md:text-4xl'>FULLSTACK ENGINEER / AI-ML ENGINEER</h1>
+    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md: '>Web Development</h3>
+    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md: '>Intellegent Systems</h3>
+    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md: '>ML Models</h3>
     <div className='w-[30px] md:w-[40px] h-[5px] bg-[#79231C] rounded-2xl mt-3.5'></div>
     <div className='flex mt-6 gap-2'>
       <img className='w-[30px] h-[20px]  md:w-[80px] md:h-[50px]'  src="/comma.png" alt="" srcset="" />
-      <p className='font-bebas text-[var(--text-bg)]  text-[10px] md:text-[20px] mt-2 md:mt-6'>I Build Web And Intelligent Systems <br/> That Solves The Real World Problem. </p>
+      <p className='font-bebas text-[var(--text-bg)]  text-[17px] md:text-[20px] mt-2 md:mt-6'>I Build Web And Intelligent Systems <br/> That Solves The Real World Problem. </p>
     </div> 
     <div>
-    <img src="SIGN.png" className='w-[80px] ml-24 mt-2 h-[30px] md:w-[110px] md:ml-60 md:mt-2 md:h-[80px]' alt="" srcset="" />
+    <img src="SIGN.png" className='w-[80px] ml-42 mt-2 h-[30px] md:w-[110px] md:ml-60 md:mt-2 md:h-[80px]' alt="" srcset="" />
     </div>
   </div>
 
