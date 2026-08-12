@@ -15,8 +15,8 @@ function Hero() {
   <div className="order-2 md:order-1 "  >
     <h1 className='font-bebas text-[#E7CEB0] text-2xl md:text-4xl'>FULLSTACK ENGINEER / AI-ML ENGINEER</h1>
     <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md:text-[1] '>Web Development</h3>
-    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md:text-[1] '>Intellegent Systems</h3>
-    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md:text-[1] '>ML Models</h3>
+    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md:text-[1.] '>Intellegent Systems</h3>
+    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md:text-[1.] '>ML Models</h3>
     <div className='w-[30px] md:w-[40px] h-[5px] bg-[#79231C] rounded-2xl mt-3.5'></div>
     <div className='flex mt-6 gap-2'>
       <img className='w-[30px] h-[20px]  md:w-[80px] md:h-[50px]'  src="/comma.png" alt="" srcset="" />
