@@ -57,8 +57,6 @@ function Hero() {
         <h3 className='font-bebas'>happy <br/>clients</h3>
       </div>
     </div>
-    
-
   </div>
 
   
