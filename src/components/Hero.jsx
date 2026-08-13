@@ -38,7 +38,7 @@ function Hero() {
     <h2 className='text-[var(--bg-red)] font-bebas mt-1 text-3xl'>AI/ML & Full-Stack Web Developer</h2>
 
     <p className='font-bebas text-[var(--text-bg)] mt-1 text-[12px] leading-relaxed tracking-wide md:text-[20px] '>
-      I’m a Full-Stack Web Developer & AI/ML Engineer focused on building<br/> modern, scalable web applications and intelligent solutions. I combine <br/>strong development skills with AI/ML to create smart, efficient, and<br/> impactful digital experiences.
+      I’m a Full-Stack Web Developer & AI/ML Engineer focused on<br/> building modern, scalable web applications and intelligent<br/> solutions. I combine strong development skills with AI/ML<br/> to create smart, efficient, and impactful digital experiences.
     </p>
     <div className='w-[280px] h-[200px] border-t-3 mt-3.5 flex border-[#79231C] gap-12'>
       <div className='text-left text-[var(--c-text)] mt-3.5'>
