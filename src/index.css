@@ -2,10 +2,26 @@
 :root {
   --text-bg: #E7CEB0;
   --bg-red: #79231C;
-  --color-text: #f5f5f5;
+  --c-text: #bab0b0;
   --color-muted: #85858f;
 }
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background: #0b0b0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #79231C;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a1b15;
+}
 /* App.css */
 .portfolio-title {
   font-family: 'Bebas Neue', sans-serif;
