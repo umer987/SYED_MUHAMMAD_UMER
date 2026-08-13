@@ -34,7 +34,7 @@
 }
 .font-bebasl {
   font-family: 'Bebas Neue', sans-serif;
-  text-transform: capitalize;
+  text-transform: lowercase;
 }
 body {
   margin: 0;
