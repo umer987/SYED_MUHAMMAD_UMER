@@ -62,7 +62,7 @@ function Hero() {
   
 </div>
     </div>
-  )
+  )a
 }
 
 export default Hero
