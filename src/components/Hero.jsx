@@ -12,11 +12,11 @@ function Hero() {
     <div className="grid grid-cols-1 md:grid-cols-3 w-[100%] h-[500px]  " >
 
   {/* 1 - Headings */}
-  <div className="order-2 md:order-1 "  >
-    <h1 className='font-bebas text-[#E7CEB0] text-2xl md:text-4xl'>FULL-STACK ENGINEER / AI-ML ENGINEER</h1>
-    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md:text-[1.5rem] '>Web Development</h3>
-    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md:text-[1.5rem] '>Intellegent Systems</h3>
-    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1.2rem] md:text-[1.5rem] '>ML Models</h3>
+  <div className="order-2 md:order-1 md:mt-8 flex-col justify-center items-center"  >
+    <h1 className='font-bebas text-[#E7CEB0] text-[18px] md:text-4xl'>FULL-STACK / AI-ML ENGINEER</h1>
+    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] md:text-[1.5rem] '>Web Development</h3>
+    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] md:text-[1.5rem] '>Intellegent Systems</h3>
+    <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] md:text-[1.5rem] '>ML Models</h3>
     <div className='w-[30px] md:w-[40px] h-[5px] bg-[#79231C] rounded-2xl mt-3.5'></div>
     <div className='flex mt-6 gap-2'>
       <img className='w-[30px] h-[20px]  md:w-[80px] md:h-[50px]'  src="/comma.png" alt="" srcset="" />
@@ -28,12 +28,12 @@ function Hero() {
   </div>
 
   {/* 2 - Image */}
-  <div className="order-1 md:order-2">
-    <img className='w-[350px] ' src="/umer.png" alt="Umer" />
+  <div className="order-1 md:order-2 relative bottom-2.5 md:bottom-12 flex justify-center ">
+    <img className='w-[300px] md:w-[400px] md:h-[450px] ' src="/umer2.png" alt="Umer" />
   </div>
 
   {/* 3 - Heading + paragraph */}
-  <div className="order-3 md:order-3">
+  <div className="order-3 md:order-3 md:mt-8 flex-col  justify-center items-center">
     <h2 className='font-bebas text-[var(--text-bg)] mt-1 text-4xl '>About me</h2>
     <h2 className='text-[var(--bg-red)] font-bebas mt-1 text-3xl'>AI/ML & Full-Stack Web Developer</h2>
 
@@ -57,8 +57,11 @@ function Hero() {
         <h3 className='font-bebas'>happy <br/>clients</h3>
       </div>
     </div>
+    
 
   </div>
+
+  
 </div>
     </div>
   )
