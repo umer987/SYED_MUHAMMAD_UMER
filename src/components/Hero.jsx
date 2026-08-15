@@ -1,4 +1,5 @@
 import React from 'react'
+import Whatido from './Whatido'
 function Hero() {
   return (
     <div>
@@ -12,7 +13,7 @@ function Hero() {
     <div className="grid grid-cols-1 md:grid-cols-3 w-[100%] h-[500px]  " >
 
   {/* 1 - Headings */}
-  <div className="order-2 md:order-1 md:mt-8 flex-col justify-center items-center"  >
+  <div className="order-2 md:order-1 md:mt-8 flex-col justify-center items-center md:ml-16"  >
     <h1 className='font-bebas text-[#E7CEB0] text-[18px] md:text-4xl'>FULL-STACK / AI-ML ENGINEER</h1>
     <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] md:text-[1.5rem] '>Web Development</h3>
     <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] md:text-[1.5rem] '>Intellegent Systems</h3>
@@ -58,11 +59,11 @@ function Hero() {
       </div>
     </div>
   </div>
-
-  
 </div>
+
+<Whatido/>
     </div>
-  )a
+  )
 }
 
 export default Hero

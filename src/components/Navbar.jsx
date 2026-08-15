@@ -16,7 +16,7 @@ function Navbar() {
      
       <div className='font-bebas  flex items-center gap-1.5 md:gap-2 text-[var(--text-bg)] text-[0.7rem] tracking-[0.5px] md:text-base md:tracking-[3px] uppercase'>
         <h3>AVAILABLE FOR FREELANCE</h3>
-        <div className='w-[8px] h-[8px] md:w-[10px] md:h-[10px] bg-[var(--bg-red)] rounded-full flex-shrink-0'></div>
+        <div className='w-[8px] h-[8px] md:w-[10px] md:h-[10px] bg-[var(--bg-red)] rounded-full flex-shrink-0 red-blink'></div>
       </div>
       
     </div>

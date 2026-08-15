@@ -43,3 +43,19 @@ body {
   background-color: black;
   white-space: nowrap;
 }
+
+
+@keyframes redBlink {
+  0%,
+  100% {
+    background-color: var(--bg-red);
+  }
+
+  50% {
+    background-color: #ff0808;
+  }
+}
+
+.red-blink {
+  animation: redBlink 2s ease-in-out infinite;
+}
