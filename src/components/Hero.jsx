@@ -19,7 +19,7 @@ function Hero() {
     <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] md:text-[1.5rem] '>Intellegent Systems</h3>
     <h3 className='font-bebasl font-extralight text-[#E7CEB0] text-[1rem] md:text-[1.5rem] '>ML Models</h3>
     <div className='w-[30px] md:w-[40px] h-[5px] bg-[#79231C] rounded-2xl mt-3.5'></div>
-    <div className='flex mt-6 gap-2'>
+    <div className='flex mt-6 gap-2 '>
       <img className='w-[30px] h-[20px]  md:w-[80px] md:h-[50px]'  src="/comma.png" alt="" srcset="" />
       <p className='font-bebas text-[var(--text-bg)]  text-[17px] md:text-[20px] mt-2 md:mt-6'>I Build Web And Intelligent Systems <br/> That Solves The Real World Problem. </p>
     </div> 
@@ -35,7 +35,7 @@ function Hero() {
 
   {/* 3 - Heading + paragraph */}
   <div className="order-3 md:order-3 md:mt-8 flex-col  justify-center items-center">
-    <h2 className='font-bebas text-[var(--text-bg)]  text-[28px] md:text-4xl '>About me</h2>
+    <h2 className='font-bebas text-[var(--text-bg)] mt-3.5 md:mt-0  text-[28px] md:text-4xl '>About me</h2>
     <h2 className='text-[var(--bg-red)] font-bebas  text-[25px] md:text-3xl'>AI/ML & Full-Stack Web Developer</h2>
 
     <p className='font-bebas text-[var(--text-bg)] mt-1 text-[12px] leading-relaxed tracking-wide md:text-[20px] '>
