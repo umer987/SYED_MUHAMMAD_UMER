@@ -38,15 +38,15 @@ function Whatido() {
     },
 ];
     return (
-        <div className='w-full h-[250px]  flex gap-8 flex-wrap md:flex-nowrap bg-[var(--bg-w)] p-8 border border-[var(--bg-red)]'>
-            <div className=' w-[16%]  h-[200px]'>
-                <h1 className='font-bebas text-3xl text-[var(--text-bg)]'>What i do</h1>
+        <div className='w-full h-auto  flex gap-8 flex-wrap  justify-start  md:flex-nowrap bg-[var(--bg-w)] p-8 border border-[var(--bg-red)]'>
+            <div className='  md:w-[250px] self-s '>
+                <h1 className='font-bebas text-[15px] md:text-3xl text-[var(--text-bg)]'>What i do</h1>
                 <div className='w-[50px] h-[4px] bg-[var(--bg-red)]'></div>
             </div>
 
 
             {services.map((service, index) => (
-                <div className=' w-[250px] border-1 border-[var(--bg-red)]  h-[200px] rounded-[8px] p-4' key={index}>
+                <div className=' w-[250px] border-1 border-[var(--bg-red)]  h-[200px] rounded-[8px] p-4 ' key={index}>
                     <img className='w-[30px] h-[30px] mb-2.5' src={service.icon } alt="" />
                     <h3 className='font-bebas text-2xl text-[var(--text-bg)]'>{service.title}</h3>
 
