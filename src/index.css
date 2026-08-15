@@ -1,7 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
 @import "tailwindcss";
+
+
+@theme {
+  --font-oswald: "Oswald", sans-serif;
+
+  --color-background: #0b0b0f;
+  --color-cream: #e7ceb0;
+  --color-red: #8b1e1e;
+}
 :root {
   --text-bg: #E7CEB0;
   --bg-red: #79231C;
+  --bg-w:#180809;
+  --bg-i:#201011;
   --c-text: #bab0b0;
   --color-muted: #85858f;
 }
