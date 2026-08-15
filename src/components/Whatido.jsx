@@ -5,7 +5,7 @@ function Whatido() {
   {
     title: "UI/UX DESIGN",
     description:
-      "Designing\n \intuitive and engaging user experiences that drive results.",
+      "Designing\ intuitive and engaging user experiences that drive results.",
     icon: "cursor",
   },
   {
