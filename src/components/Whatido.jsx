@@ -40,21 +40,77 @@ function Whatido() {
     return (
         <div className='w-full h-auto  flex gap-8 flex-wrap  justify-start  md:flex-nowrap bg-[var(--bg-w)] p-8 border border-[var(--bg-red)]'>
             <div className='  md:w-[250px] self-s '>
-                <h1 className='font-bebas text-[15px] md:text-3xl text-[var(--text-bg)]'>What i do</h1>
+                <h1 className='font-bebas text-[20px] md:text-3xl text-[var(--text-bg)]'>What i do</h1>
                 <div className='w-[50px] h-[4px] bg-[var(--bg-red)]'></div>
             </div>
 
 
-            {services.map((service, index) => (
-                <div className=' w-[250px] border-1 border-[var(--bg-red)]  h-[200px] rounded-[8px] p-4 ' key={index}>
-                    <img className='w-[30px] h-[30px] mb-2.5' src={service.icon } alt="" />
-                    <h3 className='font-bebas text-2xl text-[var(--text-bg)]'>{service.title}</h3>
+           {services.map((service, index) => (
+    <div
+        key={index}
+        className="
+            w-full
+            sm:w-[220px]
+            md:w-[230px]
+            lg:w-[250px]
 
-                    <p className="whitespace-pre-line font-oswald font-extralight text-[var(--text-bg)]">{service.description}</p>
+            min-h-[180px]
+            sm:min-h-[190px]
+            md:h-[200px]
 
-                    
-                </div>
-            ))}
+            rounded-[8px]
+            p-4
+            sm:p-4
+            md:p-5
+
+            border
+            border-[var(--bg-red)]
+        "
+    >
+        <img
+            className="
+                w-[24px]
+                h-[24px]
+                sm:w-[27px]
+                sm:h-[27px]
+                md:w-[30px]
+                md:h-[30px]
+                mb-2
+                md:mb-2.5
+                object-contain
+            "
+            src={service.icon}
+            alt={service.title}
+        />
+
+        <h3
+            className="
+                font-bebas
+                text-xl
+                sm:text-[22px]
+                md:text-2xl
+                text-[var(--text-bg)]
+            "
+        >
+            {service.title}
+        </h3>
+
+        <p
+            className="
+                whitespace-pre-line
+                font-oswald
+                font-light
+                text-sm
+                sm:text-[15px]
+                md:text-base
+                leading-[1.35]
+                text-[var(--text-bg)]
+            "
+        >
+            {service.description}
+        </p>
+    </div>
+))}
 
         </div>
     )

@@ -10,7 +10,7 @@ function Hero() {
     </div>
 
 
-    <div className="grid grid-cols-1 md:grid-cols-3 w-[100%] h-[500px]  " >
+    <div className="grid grid-cols-1 md:grid-cols-3 w-[100%] h-auto  " >
 
   {/* 1 - Headings */}
   <div className="order-2 md:order-1 md:mt-8 flex-col justify-center items-center md:ml-16"  >
@@ -61,7 +61,7 @@ function Hero() {
   </div>
 </div>
 
-<Whatido/>
+<Whatido />
     </div>
   )
 }
