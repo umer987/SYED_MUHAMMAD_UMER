@@ -3,3 +3,4 @@
       <div className=' w-[16%] border-1 border-[var(--bg-red)] h-[200px] rounded-[8px]'></div>
       <div className=' w-[16%] border-1 border-[var(--bg-red)] h-[200px] rounded-[8px]'></div>
       <div className=' w-[16%] border-1 border-[var(--bg-red)] h-[200px] rounded-[8px]'></div>
+      https://fonts.google.com/specimen/Oswald
