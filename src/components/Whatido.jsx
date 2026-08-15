@@ -1,8 +1,7 @@
 import React from 'react'
 
 function Whatido() {
-
-   const services = [
+    const services = [
   {
     title: "UI/UX DESIGN",
     description:
@@ -37,7 +36,18 @@ function Whatido() {
   return (
     <div className='w-full h-[250px]  flex gap-8'>
       <div className=' w-[16%]  h-[200px]'></div>
-      
+     <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+  {services.map((service, index) => (
+    <div key={index}>
+      <h3>{service.title}</h3>
+
+      <p>{service.description}</p>
+
+      {/* icon */}
+      {/* render based on service.icon */}
+    </div>
+  ))}
+</div>
     </div>
   )
 }
