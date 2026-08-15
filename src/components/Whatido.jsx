@@ -52,8 +52,7 @@ function Whatido() {
 
                     <p className="whitespace-pre-line font-oswald font-extralight text-[var(--text-bg)]">{service.description}</p>
 
-                    {/* icon */}
-                    {/* render based on service.icon */}
+                    
                 </div>
             ))}
 
