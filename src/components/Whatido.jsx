@@ -5,7 +5,7 @@ function Whatido() {
   {
     title: "UI/UX DESIGN",
     description:
-      "Designing\ intuitive and engaging user experiences that drive results.",
+      "Designing intuitive and engaging user experiences that drive results.",
     icon: "cursor",
   },
   {
@@ -35,14 +35,17 @@ function Whatido() {
 ];
   return (
     <div className='w-full h-[250px]  flex gap-8'>
-      <div className=' w-[16%]  h-[200px]'></div>
-     {/* <div className="className=' w-[16%] border-1 border-[var(--bg-red)] h-[200px] rounded-[8px]"> */}
+      <div className=' w-[16%]  h-[200px]'> 
+        <h1 className='font-bebas'>What i do</h1>
+        <div></div>
+      </div>
+
   
   {services.map((service, index) => (
     <div className=' w-[16%] border-1 border-[var(--bg-red)] h-[200px] rounded-[8px]' key={index}>
-      <h3>{service.title}</h3>
+      <h3 className='font-bebas'>{service.title}</h3>
 
-      <p className="whitespace-pre-line">{service.description}</p>
+      <p className="whitespace-pre-line font-bebas">{service.description}</p>
 
       {/* icon */}
       {/* render based on service.icon */}
