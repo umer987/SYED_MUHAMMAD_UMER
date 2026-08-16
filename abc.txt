@@ -85,13 +85,7 @@ function Process() {
                                     alt={item.title}
                                 />
 
-                            </div>
-
-                            {/* Content */}
-                            <div className="flex-1 min-w-0">
-
-                                <h3 className="font-bebas text-xl sm:text-2xl text-[var(--text-bg)] leading-none">
-                                    {item.title}
+           
               
       
        
