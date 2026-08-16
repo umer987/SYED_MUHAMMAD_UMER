@@ -105,15 +105,6 @@ function Process() {
 
                 </div>
 
-            </div>
-
-
-            {/* ================= FEATURED WORK ================= */}
-
-            <div className="w-full lg:w-[70%] bg-[var(--bg-w)] border border-[var(--bg-red)] p-5 md:p-6">
-
-                <div className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
-
-                    {/* Heading */}
+            <
       
        
