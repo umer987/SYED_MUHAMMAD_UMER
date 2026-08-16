@@ -1,5 +1,6 @@
 import React from 'react'
 import Whatido from './Whatido'
+import Process from './Process'
 function Hero() {
   return (
     <div className='flex flex-col'>
@@ -62,6 +63,7 @@ function Hero() {
 </div>
 
 <Whatido />
+<Process/>
     </div>
   )
 }
