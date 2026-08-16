@@ -98,13 +98,6 @@ function Process() {
                                     {item.description}
                                 </p>
 
-                            </div>
-
-                        </div>
-                    ))}
-
-                </div>
-
-            <
+           
       
        
