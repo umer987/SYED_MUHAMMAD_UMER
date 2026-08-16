@@ -115,12 +115,5 @@ function Process() {
                 <div className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
 
                     {/* Heading */}
-                    <div>
-                        <h1 className="font-bebas text-xl sm:text-2xl md:text-3xl text-[var(--text-bg)]">
-                            FEATURED WORK
-                        </h1>
-
-                        <div className="w-[50px] h-[4px] bg-[var(--bg-red)] mt-1"></div>
-                    </div>
-
+      
        
