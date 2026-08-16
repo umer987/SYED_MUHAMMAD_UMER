@@ -92,12 +92,6 @@ function Process() {
 
                                 <h3 className="font-bebas text-xl sm:text-2xl text-[var(--text-bg)] leading-none">
                                     {item.title}
-                                </h3>
-
-                                <p className="font-oswald font-light text-xs sm:text-sm md:text-base leading-[1.4] text-[var(--text-bg)] mt-1 max-w-[300px]">
-                                    {item.description}
-                                </p>
-
-           
+              
       
        
