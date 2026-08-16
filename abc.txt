@@ -127,9 +127,4 @@ function Process() {
                     <div className="text-[var(--bg-red)] flex items-center gap-2 cursor-pointer group">
 
                         <h2 className="font-oswald text-sm sm:text-base">
-                            View More Projects
-                        </h2>
-
-                        <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-
-                    </div>
+              
