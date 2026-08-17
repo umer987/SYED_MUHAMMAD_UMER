@@ -4,7 +4,6 @@ function Aboutme() {
     return (
         <div className="w-full flex flex-col lg:flex-row min-h-[600px] border border-[var(--bg-red)] p-6">
 
-            {/* ================= LEFT SIDE ================= */}
 
             <div className="w-full lg:w-[50%]">
 
