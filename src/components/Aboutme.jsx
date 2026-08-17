@@ -7,7 +7,6 @@ function Aboutme() {
 
             <div className="w-full lg:w-[50%]">
 
-                {/* Heading */}
                 <div className="mb-7">
 
                     <h1 className="font-bebas text-xl sm:text-2xl md:text-3xl text-[var(--text-bg)]">
