@@ -1,6 +1,7 @@
 import React from 'react'
 import Whatido from './Whatido'
 import Process from './Process'
+import Aboutme from './Aboutme'
 function Hero() {
   return (
     <div className='flex flex-col'>
@@ -64,6 +65,7 @@ function Hero() {
 
 <Whatido />
 <Process/>
+<Aboutme/>
     </div>
   )
 }
