@@ -2,10 +2,10 @@ import React from "react";
 
 function Aboutme() {
     return (
-        <div className="w-full flex flex-col h-[450px] lg:flex-row min-h-[600px] border border-[var(--bg-red)] p-6">
+        <div className="w-full flex flex-col h-auto lg:flex-row min-h-[600px] border border-[var(--bg-red)] p-6">
 
 
-            <div className="w-full lg:w-[50%] h-[400px] ">
+            <div className="w-full lg:w-[50%] ">
 
                 <div className="mb-7">
 
@@ -93,7 +93,7 @@ function Aboutme() {
 
 
 
-            <div className="w-full lg:w-[50%]  h-[400px] mt-8 lg:mt-0">
+            <div className="w-full lg:w-[50%]  mt-8 lg:mt-0">
 
 
             </div>
