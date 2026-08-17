@@ -91,16 +91,13 @@ function Aboutme() {
             </div>
 
 
-            {/* ================= DIVIDER ================= */}
 
             <div className="hidden lg:block w-[1px] min-h-[400px] bg-[var(--bg-red)] mx-6"></div>
 
 
-            {/* ================= RIGHT SIDE ================= */}
 
             <div className="w-full lg:w-[50%] mt-8 lg:mt-0">
 
-                {/* Your content will go here */}
 
             </div>
 
