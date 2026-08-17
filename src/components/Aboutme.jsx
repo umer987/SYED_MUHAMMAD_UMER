@@ -2,10 +2,10 @@ import React from "react";
 
 function Aboutme() {
     return (
-        <div className="w-full flex flex-col lg:flex-row min-h-[600px] border border-[var(--bg-red)] p-6">
+        <div className="w-full flex flex-col h-[450px] lg:flex-row min-h-[600px] border border-[var(--bg-red)] p-6">
 
 
-            <div className="w-full lg:w-[50%]">
+            <div className="w-full lg:w-[50%] h-[400px] ">
 
                 <div className="mb-7">
 
@@ -29,7 +29,7 @@ function Aboutme() {
                                 w-[200px]
                                 md:w-[250px]
                                 h-[250px]
-                                md:h-[300px]
+                                md:h-[280px]
                                 rounded-[10px]
                                 object-cover
                                 shrink-0
@@ -39,7 +39,7 @@ function Aboutme() {
 
 
                         {/* Text */}
-                        <div className="font-oswald text-[var(--text-bg)] flex-1">
+                        <div className="font-oswald text-[var(--text-bg)] mt-3.5 flex-1">
 
                             <p className="text-sm md:text-base leading-relaxed">
                                 I'm a Full-Stack & AI/ML Engineer passionate about
@@ -89,11 +89,11 @@ function Aboutme() {
 
 
 
-            <div className="hidden lg:block w-[1px] min-h-[400px] bg-[var(--bg-red)] mx-6"></div>
+            <div className="hidden lg:block w-[1px] h-[400px] bg-[var(--bg-red)] mx-6"></div>
 
 
 
-            <div className="w-full lg:w-[50%] mt-8 lg:mt-0">
+            <div className="w-full lg:w-[50%]  h-[400px] mt-8 lg:mt-0">
 
 
             </div>
