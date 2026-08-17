@@ -25,7 +25,6 @@ function Aboutme() {
 
                     <div className="flex flex-col md:flex-row gap-6 mt-4 items-start">
 
-                        {/* Image */}
                         <img
                             src="/umer3.jpg"
                             className="
