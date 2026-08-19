@@ -199,7 +199,6 @@ function Aboutme() {
                 "
             >
 
-                {/* Heading */}
                 <div className="mb-6">
 
                     <h1
