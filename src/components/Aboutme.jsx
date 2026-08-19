@@ -111,7 +111,6 @@ function Aboutme() {
                     />
 
 
-                    {/* About Content */}
                     <div
                         className="
                             font-oswald
