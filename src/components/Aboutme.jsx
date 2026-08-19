@@ -279,7 +279,6 @@ function Aboutme() {
                     "
                 >
 
-                    {/* Quote Icon */}
                     <div className="shrink-0">
 
                         <img
