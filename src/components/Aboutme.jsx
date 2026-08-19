@@ -219,7 +219,6 @@ function Aboutme() {
                 </div>
 
 
-                {/* Tools Grid */}
                 <div className="flex flex-wrap items-center gap-2">
 
                     {projects.map((project) => (
