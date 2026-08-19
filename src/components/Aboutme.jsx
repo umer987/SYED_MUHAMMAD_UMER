@@ -82,7 +82,6 @@ function Aboutme() {
                 </div>
 
 
-                {/* Image + About Text */}
                 <div
                     className="
                         w-full
