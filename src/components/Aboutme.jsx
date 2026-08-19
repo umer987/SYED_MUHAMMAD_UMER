@@ -297,7 +297,6 @@ function Aboutme() {
                     </div>
 
 
-                    {/* Testimonial Text */}
                     <div
                         className="
                             p-2
