@@ -221,6 +221,7 @@ function Aboutme() {
         ))}
     </div>
 
+            <div className="bg-[var(--bg-w)] w-[400px] h-[180px] border border-[var(--bg-red)]"></div>
 </div>
         </div>
     );
