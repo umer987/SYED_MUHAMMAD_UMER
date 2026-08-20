@@ -1,3 +1,5 @@
 const app = require('./src/app')
 
-app.listen()
+app.listen(()=>{
+    console.log("SERVER STARTED")
+})
