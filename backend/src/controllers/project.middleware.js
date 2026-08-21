@@ -1,6 +1,6 @@
-const projectmodel = require
+const projectmodel = require('../config/models/projects.model')
 
-async function projectcontroller(params) {
+async function projectcontroller(req,res) {
     
 }
 
