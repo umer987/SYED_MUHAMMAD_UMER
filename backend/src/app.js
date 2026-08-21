@@ -6,7 +6,7 @@ app.use(cors())
 const projectroute = require('./routes/project.route')
 
 
-app.use('/api/')
+app.use('/api/project' , projectroute)
 
 
 
