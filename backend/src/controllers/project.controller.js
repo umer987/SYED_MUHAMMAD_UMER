@@ -5,7 +5,7 @@ async function projectcontroller(req,res) {
      console.log(title ,category ,image ,discription)
 
      return res.status(201).json({
-title ,category ,image 
+title ,category ,image ,discription
      })
 }
 
