@@ -13,7 +13,7 @@ async function admincontroller(req , res) {
           email , name , password
     })
 }
-a
+
 
 
 module.exports = {
