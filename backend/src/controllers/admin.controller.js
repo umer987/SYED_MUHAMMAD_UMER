@@ -14,7 +14,6 @@ async function admincontroller(req , res) {
     })
 }
 a
-a
 
 
 module.exports = {
