@@ -10,3 +10,6 @@ const adminschema = new mongoose.Schema({
     maxlength: [100, 'Password cannot exceed 100 characters']
 } 
 })
+const adminmodel = mongoose.model('admin', adminschema)
+
+module.exports = adminmodel
