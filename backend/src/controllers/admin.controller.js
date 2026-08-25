@@ -38,6 +38,15 @@ async function logincontroller(req , res) {
     );
     // 4. Set the secure HttpOnly cookie
     res.cookie("token", token);
+
+    return res.status(200).json({
+        message: "Login successful",
+        admin: {
+            id: admin._id,
+            email: admin.email
+            name:admin.name
+        }
+    });
 }
 
 module.exports = {
