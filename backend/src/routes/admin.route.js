@@ -7,6 +7,7 @@ const  admincontroller  = require('../controllers/admin.controller')
 const upload = multer({storage:multer.memoryStorage()})
 
 router.post('/add-admin' , admincontroller.admincontroller)
+router.post('/login' , admincontroller.logincontroller)
 
 
 module.exports = router
