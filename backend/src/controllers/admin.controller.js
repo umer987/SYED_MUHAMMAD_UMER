@@ -34,8 +34,7 @@ async function logincontroller(req , res) {
     // 3. Generate the JWT (since credentials are correct)
     const token = jwt.sign(
         { id: admin._id }, 
-        process.env.JWT,
-        { expiresIn: '1d' } // Expire token after 1 day
+        process.env.JWT// Expire token after 1 day
     );
 }
 
