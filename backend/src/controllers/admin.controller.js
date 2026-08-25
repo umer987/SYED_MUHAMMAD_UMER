@@ -36,6 +36,13 @@ async function logincontroller(req , res) {
         { id: admin._id }, 
         process.env.JWT// Expire token after 1 day
     );
+    // 4. Set the secure HttpOnly cookie
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: 'strict',
+        maxAge: 24 * 60 * 60 * 1000
+    });
 }
 
 module.exports = {
