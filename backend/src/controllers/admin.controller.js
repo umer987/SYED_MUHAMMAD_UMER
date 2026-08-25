@@ -20,7 +20,14 @@ async function logincontroller(req , res) {
     const {email , password } = req.body 
     const admin = await adminmodel.findOne({ email: email });
     const hash = await bcrypt.compare(password)
+// If no admin is found, stop here and return an error
+    if (!admin) {
+        return res.status(401).json({ message: "Invalid email or password" });
+    }
 
+    // 2. Compare the provided password with the stored hash
+    const isMatch = await bcrypt.compare(password, admin.password);
+    
     const token = jwt.sign({id:admin._id},process.env.JWT)
     res.cookie("token", token)
      return res.status(200).json({
