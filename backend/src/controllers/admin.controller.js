@@ -43,7 +43,7 @@ async function logincontroller(req , res) {
         message: "Login successful",
         admin: {
             id: admin._id,
-            email: admin.email
+            email: admin.email,
             name:admin.name
         }
     });
