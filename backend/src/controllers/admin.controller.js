@@ -27,12 +27,16 @@ async function logincontroller(req , res) {
 
     // 2. Compare the provided password with the stored hash
     const isMatch = await bcrypt.compare(password, admin.password);
-    
-    const token = jwt.sign({id:admin._id},process.env.JWT)
-    res.cookie("token", token)
-     return res.status(200).json({
-          email , name , password , token
-    })
+    if (!isMatch) {
+        return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    // 3. Generate the JWT (since credentials are correct)
+    const token = jwt.sign(
+        { id: admin._id }, 
+        process.env.JWT,
+        { expiresIn: '1d' } // Expire token after 1 day
+    );
 }
 
 module.exports = {
