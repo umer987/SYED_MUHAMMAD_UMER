@@ -35,3 +35,8 @@ const AddProject = () => {
                          file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-[#79231C] file:text-white file:font-oswald cursor-pointer hover:file:bg-red-900 transition-colors"
             />
           </div>
+
+          <div className="flex flex-col gap-2">
+            <label className="text-gray-300 tracking-wider">DESCRIPTION</label>
+            <textarea 
+              rows="5"
