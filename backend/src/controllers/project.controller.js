@@ -27,7 +27,20 @@ async function projectcontroller(req, res) {
 }
 
 
+async function get_all_projects(req,res) {
+     try{
+          const projects = await projectmodel.find({}).sort({ _id: -1 })
+          return res.status(200).json({
+          message:`projects fetched successfully count is ${projects.length}`,
+          projects
 
+     })
+     }
+     catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: "Server error while fetching messages" });
+    }
+}
 
 
 
@@ -36,5 +49,6 @@ async function projectcontroller(req, res) {
 
 
 module.exports = {
-     projectcontroller
+     projectcontroller,
+     get_all_projects
 };

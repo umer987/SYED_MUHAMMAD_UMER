@@ -7,10 +7,10 @@ app.use(express.json())
 app.use(cors())
 const projectroute = require('./routes/project.route')
 const adminroute = require('./routes/admin.route') 
-
+const messageroute = require('./routes/messageme.route')
 app.use('/api/project' , projectroute)
 app.use('/api/admin' , adminroute)
-
+app.use('/api/message' , messageroute)
 
 
 
