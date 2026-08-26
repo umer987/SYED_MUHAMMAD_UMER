@@ -44,3 +44,17 @@ const AddProject = () => {
               className="bg-black border border-[#79231C] text-white p-3 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C] resize-none placeholder-gray-700"
             ></textarea>
           </div>
+
+          <button 
+            type="button" 
+            className="mt-2 bg-[#79231C] hover:bg-red-900 text-white p-3 rounded tracking-widest transition-colors"
+          >
+            PUBLISH PROJECT
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default AddProject;
