@@ -9,3 +9,9 @@ const AddProject = () => {
         <form className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             <label className="text-gray-300 tracking-wider">PROJECT TITLE</label>
+            <input 
+              type="text" 
+              placeholder="e.g. Voice2Law Legal Assistant"
+              className="bg-black border border-[#79231C] text-white p-3 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C]"
+            />
+          </div>
