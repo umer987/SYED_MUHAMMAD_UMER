@@ -15,3 +15,6 @@ const AddProject = () => {
               className="bg-black border border-[#79231C] text-white p-3 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C]"
             />
           </div>
+
+          <div className="flex flex-col gap-2">
+            <label className="text-gray-300 tracking-wider">CATEGORY</label>
