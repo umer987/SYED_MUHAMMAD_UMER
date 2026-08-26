@@ -40,3 +40,7 @@ const AddProject = () => {
             <label className="text-gray-300 tracking-wider">DESCRIPTION</label>
             <textarea 
               rows="5"
+              placeholder="Describe the project..."
+              className="bg-black border border-[#79231C] text-white p-3 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C] resize-none placeholder-gray-700"
+            ></textarea>
+          </div>
