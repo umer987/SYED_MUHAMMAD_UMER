@@ -29,3 +29,9 @@ const AddProject = () => {
           <div className="flex flex-col gap-2">
             <label className="text-gray-300 tracking-wider">PROJECT IMAGE</label>
             <input 
+              type="file" 
+              accept="image/*"
+              className="bg-black border border-[#79231C] text-gray-400 p-2 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C] 
+                         file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-[#79231C] file:text-white file:font-oswald cursor-pointer hover:file:bg-red-900 transition-colors"
+            />
+          </div>
