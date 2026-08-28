@@ -48,8 +48,10 @@ async function logincontroller(req , res) {
         }
     });
 }
-
+async function logoutController(req, res) {
+  
 module.exports = {
     admincontroller,
-    logincontroller
+    logincontroller,
+    logoutController
 };
