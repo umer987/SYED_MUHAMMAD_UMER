@@ -49,6 +49,8 @@ async function logincontroller(req , res) {
     });
 }
 async function logoutController(req, res) {
+    try {
+        // Clear the token cookie
   
 module.exports = {
     admincontroller,
