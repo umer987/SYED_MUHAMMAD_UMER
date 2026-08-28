@@ -58,6 +58,7 @@ async function logoutController(req, res) {
         });
     } catch (error) {
         console.error("Logout error:", error);
+        return res.status(500).json({
   
 module.exports = {
     admincontroller,
