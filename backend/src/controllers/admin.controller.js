@@ -50,12 +50,45 @@ async function logincontroller(req , res) {
 }
 async function logoutController(req, res) {
     try {
-        // Clear the token cookie
+        // 1. Check if token exists in cookies
+        const token = req.cookies.token;
+        
+        if (!token) {
+            return res.status(401).json({ 
+                message: "No active session found. Please login first." 
+            });
+        }
+
+        // 2. Verify if token is valid
+        try {
+            const decoded = jwt.verify(token, process.env.JWT);
+            
+            // Optional: Check if user still exists in database
+            const admin = await adminmodel.findById(decoded.id);
+            if (!admin) {
+                // Clear the invalid cookie
+                res.clearCookie("token");
+                return res.status(401).json({ 
+                    message: "User no longer exists. Please login again." 
+                });
+            }
+
+        } catch (jwtError) {
+            // Token is invalid or expired
+            res.clearCookie("token");
+            return res.status(401).json({ 
+                message: "Invalid or expired session. Please login again." 
+            });
+        }
+
+        // 3. Clear the token cookie (user is authenticated)
         res.clearCookie("token");
 
         return res.status(200).json({
-            message: "Logout successful"
+            message: "Logout successful",
+            timestamp: new Date().toISOString()
         });
+
     } catch (error) {
         console.error("Logout error:", error);
         return res.status(500).json({

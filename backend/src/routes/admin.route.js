@@ -8,6 +8,6 @@ const upload = multer({storage:multer.memoryStorage()})
 
 router.post('/add-admin' , admincontroller.admincontroller)
 router.post('/login' , admincontroller.logincontroller)
-router.post('/logout',admincontroller.logincontroller)
+router.post('/logout',admincontroller.logoutController)
 
 module.exports = router
