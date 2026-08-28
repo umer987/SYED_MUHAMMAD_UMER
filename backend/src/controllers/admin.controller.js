@@ -53,6 +53,8 @@ async function logoutController(req, res) {
         // Clear the token cookie
         res.clearCookie("token");
 
+        return res.status(200).json({
+            message: "Logout successful"
   
 module.exports = {
     admincontroller,
