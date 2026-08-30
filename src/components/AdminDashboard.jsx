@@ -1,8 +1,21 @@
 import React, { useState } from 'react';
 import AddProject from './AddProject';
 import ClientMessages from './ClientMessages';
+import { useAuth } from '../context/AuthContext' 
+import { useNavigate } from 'react-router-dom';
 
 const AdminDashboard = () => {
+    const navigate = useNavigate();
+
+  const {logout} = useAuth()
+
+const handlelogout = async () =>{
+
+      logout()
+      navigate('/ad');
+   
+  }
+
   // State to track which page to show ('messages' or 'addProject')
   const [activePage, setActivePage] = useState('messages');
 
@@ -46,7 +59,7 @@ const AdminDashboard = () => {
           {/* Logout Button */}
           <button 
             className="text-gray-300 hover:text-red-500 tracking-widest transition-colors"
-            onClick={() => alert("Logout functionality goes here")}
+            onClick={() => handlelogout()}
           >
             LOGOUT
           </button>

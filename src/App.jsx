@@ -6,23 +6,24 @@ import AdminLogin from './components/AdminLogin';
 import AddProject from './components/AddProject';
 import ClientMessages from './components/ClientMessages';
 import AdminDashboard from './components/AdminDashboard';
-
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
     <div>
-     
+     <AuthProvider>
         <BrowserRouter>
         <Routes>  
           <Route path='/' element={<Home />} />
           <Route path='/ad' element={<AdminLogin/>} />
           <Route path='/ap' element={<AddProject/> } />
           <Route path='/cm' element={<ClientMessages/> } />
-          <Route path='/add' element={<AdminDashboard/> } />
+          <Route path='/AdminDashboard' element={<AdminDashboard/> } />
          
           
         </Routes>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   )
 }
