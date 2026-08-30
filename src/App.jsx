@@ -19,7 +19,11 @@ function App() {
           <Route path='/ap' element={<AddProject/> } />
           <Route path='/cm' element={<ClientMessages/> } />
           <Route path='/AdminDashboard' element={<AdminDashboard/> } />
-         
+         <Route element={<ProtectedRoute />}>
+            <Route path='/ap' element={<AddProject/> } />
+            <Route path='/cm' element={<ClientMessages/> } />
+            <Route path='/AdminDashboard' element={<AdminDashboard/> } />
+          </Route>
           
         </Routes>
       </BrowserRouter>
