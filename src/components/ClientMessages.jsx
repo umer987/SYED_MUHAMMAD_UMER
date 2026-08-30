@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 const ClientMessages = () => {
   // Static dummy data just to show the UI layout
   const [messages, setMessages] = useState([ {
@@ -21,7 +22,7 @@ const ClientMessages = () => {
         console.log(response)
         
         // Save the data to state
-        setMessages(response.messages);
+        setMessages(response.data);
       } catch (err) {
         setError('Failed to load messages');
         console.error(err);
