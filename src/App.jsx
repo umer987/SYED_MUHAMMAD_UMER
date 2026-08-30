@@ -16,9 +16,7 @@ function App() {
         <Routes>  
           <Route path='/' element={<Home />} />
           <Route path='/ad' element={<AdminLogin/>} />
-          <Route path='/ap' element={<AddProject/> } />
-          <Route path='/cm' element={<ClientMessages/> } />
-          <Route path='/AdminDashboard' element={<AdminDashboard/> } />
+          
          <Route element={<ProtectedRoute />}>
             <Route path='/ap' element={<AddProject/> } />
             <Route path='/cm' element={<ClientMessages/> } />
