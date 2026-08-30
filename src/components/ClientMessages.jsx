@@ -2,6 +2,10 @@ import React from 'react';
 
 const ClientMessages = () => {
   // Static dummy data just to show the UI layout
+
+  const messges = async () => {
+    
+  }
   const dummyMessages = [
     {
       id: 1,
