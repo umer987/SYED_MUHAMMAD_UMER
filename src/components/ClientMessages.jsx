@@ -1,35 +1,39 @@
-import React from 'react';
-
+import { useState, useEffect } from 'react';
 const ClientMessages = () => {
   // Static dummy data just to show the UI layout
-
-  const messges = async () => {
-     const response = await axios.post(
-        'http://localhost:3000/api/admin/login',
-        {email, password }, // Map frontend 'username' to backend 'email'
-        { withCredentials: true }
-      );
-  }
-  const dummyMessages = [
-    {
+  const [messages, setMessages] = useState([ {
       id: 1,
       name: "Ahmed Khan",
       email: "ahmed@example.com",
       brief: "Looking to build a custom interactive machine learning dashboard for predicting energy consumption."
-    },
-    {
-      id: 2,
-      name: "Sarah Jenkins",
-      email: "sarah.j@company.com",
-      brief: "We need a full-stack Next.js application with a PostgreSQL database to handle our new e-commerce platform."
-    },
-    {
-      id: 3,
-      name: "Tech Solutions Inc.",
-      email: "contact@techsolutions.com",
-      brief: "Interested in a computer vision smart monitoring architecture. We have the video streams ready."
-    }
-  ];
+    }]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
+   useEffect(() => {
+    
+    // Create an async helper function inside the useEffect
+    const fetchMessages = async () => {
+      try {
+        const response = await axios.get(
+          'http://localhost:3000/api/message/get-message', 
+          { withCredentials: true }
+        );
+        console.log(response)
+        
+        // Save the data to state
+        setMessages(response.messages);
+      } catch (err) {
+        setError('Failed to load messages');
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    // Call the function
+    fetchMessages();
+  }, []);
+
 
   return (
     <div className="min-h-screen bg-black font-oswald p-8">
@@ -39,9 +43,9 @@ const ClientMessages = () => {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {dummyMessages.map((msg) => (
+          {messages.map((msg) => (
             <div 
-              key={msg.id} 
+              key={msg._id} 
               className="bg-[#201011] border border-[#79231C] p-6 rounded-lg flex flex-col gap-4 shadow-lg transition-transform hover:scale-[1.02]"
             >
               <div className="border-b border-[#79231C] pb-4">
