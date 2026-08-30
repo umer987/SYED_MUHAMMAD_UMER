@@ -7,7 +7,7 @@ import AddProject from './components/AddProject';
 import ClientMessages from './components/ClientMessages';
 import AdminDashboard from './components/AdminDashboard';
 import { AuthProvider } from './context/AuthContext';
-
+import ProtectedRoute from './components/ProtectedRoute';
 function App() {
   return (
     <div>
