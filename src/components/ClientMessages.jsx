@@ -4,7 +4,11 @@ const ClientMessages = () => {
   // Static dummy data just to show the UI layout
 
   const messges = async () => {
-    
+     const response = await axios.post(
+        'http://localhost:3000/api/admin/login',
+        {email, password }, // Map frontend 'username' to backend 'email'
+        { withCredentials: true }
+      );
   }
   const dummyMessages = [
     {
