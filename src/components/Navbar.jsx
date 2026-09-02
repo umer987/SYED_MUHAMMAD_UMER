@@ -3,7 +3,7 @@ import '@fontsource/bebas-neue';
 
 function Navbar() {
   return (
-    <div className='w-full flex justify-between items-center'>
+    <div className='w-full flex justify-between items-center mb-3.5'>
       
       <div>
         <h3 className='font-bebas  text-[var(--text-bg)] text-[0.7rem] tracking-[0.5px] md:text-base md:tracking-[3px] uppercase'>
