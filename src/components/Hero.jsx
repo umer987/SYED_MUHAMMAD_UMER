@@ -57,7 +57,7 @@ function Hero() {
       </div>
       <div className='text-left text-[var(--c-text)] mt-3.5'>
         <img src="/clients.png" className='w-[50px] h-[50px]'  alt="" srcset="" />
-        <h1 className='font-bebas text-[var(--text-bg)]  text-2xl leading-relaxed tracking-wide'>12+</h1>
+        <h1 className='font-bebas text-[var(--text-bg)]  text-2xl leading-relaxed tracking-wide'>5+</h1>
         <h3 className='font-bebas text-[var(--text-bg)] '>happy <br/>clients</h3>
       </div>
     </div>
