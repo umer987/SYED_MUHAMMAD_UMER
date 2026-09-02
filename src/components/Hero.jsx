@@ -52,7 +52,7 @@ function Hero() {
       </div>
       <div className='text-left text-[var(--c-text)] mt-3.5' >
         <img src="/projects.png" className='w-[50px] h-[50px]'  alt="" srcset="" />
-        <h1 className='font-bebas text-[var(--text-bg)]  text-2xl leading-relaxed tracking-wide'>23+</h1>
+        <h1 className='font-bebas text-[var(--text-bg)]  text-2xl leading-relaxed tracking-wide'>10+</h1>
         <h3 className='font-bebas text-[var(--text-bg)] '>projects <br/>complete</h3>
       </div>
       <div className='text-left text-[var(--c-text)] mt-3.5'>
