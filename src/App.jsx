@@ -8,6 +8,7 @@ import ClientMessages from './components/ClientMessages';
 import AdminDashboard from './components/AdminDashboard';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import Projects from './components/Projects';
 function App() {
   return (
     <div>
@@ -16,6 +17,8 @@ function App() {
         <Routes>  
           <Route path='/' element={<Home />} />
           <Route path='/ad' element={<AdminLogin/>} />
+          <Route path='/all-projects' element={ <Projects/> } />
+          
           
          <Route element={<ProtectedRoute />}>
             <Route path='/ap' element={<AddProject/> } />

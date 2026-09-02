@@ -212,37 +212,46 @@ function Aboutme() {
                 <div className="flex flex-wrap items-center gap-2">
 
                     {projects.map((project) => (
-                        <div
-                            key={project.id}
-                            className="
-                                w-[60px]
-                                h-[60px]
-                                sm:w-[65px]
-                                sm:h-[65px]
-                                border
-                                border-[var(--bg-red)]
-                                flex
-                                justify-center
-                                items-center
-                                rounded-[10px]
-                                shrink-0
-                            "
-                        >
-
-                            <img
-                                className="
-                                    w-[38px]
-                                    h-[38px]
-                                    sm:w-[40px]
-                                    sm:h-[40px]
-                                    object-contain
-                                "
-                                src={project.image}
-                                alt={`Tool ${project.id}`}
-                            />
-
-                        </div>
-                    ))}
+    <div
+        key={project.id}
+        className="
+            group
+            cursor-pointer
+            transition-all
+            duration-300
+            ease-out
+            hover:-translate-y-1
+            hover:shadow-[0_5px_15px_rgba(121,35,28,0.4)] /* Adds a subtle red glow underneath */
+            w-[60px]
+            h-[60px]
+            sm:w-[65px]
+            sm:h-[65px]
+            border
+            border-[var(--bg-red)]
+            flex
+            justify-center
+            items-center
+            rounded-[10px]
+            shrink-0
+        "
+    >
+        <img
+            className="
+                transition-transform
+                duration-300
+                ease-out
+                group-hover:scale-125 /* Scales the image up by 25% on hover */
+                w-[38px]
+                h-[38px]
+                sm:w-[40px]
+                sm:h-[40px]
+                object-contain
+            "
+            src={project.image}
+            alt={`Tool ${project.id}`}
+        />
+    </div>
+))}
 
                 </div>
 
