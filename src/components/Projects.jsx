@@ -1,6 +1,3 @@
-
-
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaArrowRight, FaGithub, FaExternalLinkAlt, FaTimes, FaCode, FaLaptopCode } from "react-icons/fa";
