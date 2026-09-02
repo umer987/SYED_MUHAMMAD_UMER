@@ -10,6 +10,7 @@ const MessageMe = () => {
     projectbrief: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
  
 
   const handleChange = (e) => {
