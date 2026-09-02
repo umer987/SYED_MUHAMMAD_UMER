@@ -9,6 +9,7 @@ const MessageMe = () => {
     email: '',
     projectbrief: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
  
 
   const handleChange = (e) => {
