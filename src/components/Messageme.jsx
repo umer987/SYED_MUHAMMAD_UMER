@@ -27,7 +27,7 @@ const MessageMe = () => {
     setErrorMessage('');
 
     try {
-      const response = await api.post('/api/messages', formData);
+      const response = await post('http://localhost:3000/api/message/message-me', formData);
       console.log('Message sent:', response.data);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', projectbrief: '' });
@@ -119,7 +119,7 @@ const MessageMe = () => {
                 onChange={handleChange}
                 required
                 className="w-full bg-[#180809] border border-[#79231C]/30 rounded-xl px-5 py-3.5 text-[#E7CEB0] font-oswald placeholder-[#E7CEB0]/30 focus:border-[#79231C] focus:outline-none focus:ring-2 focus:ring-[#79231C]/30 transition-all duration-300"
-                placeholder="John Doe"
+                placeholder="Your Name"
               />
               <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#79231C] group-focus-within:w-full transition-all duration-300"></div>
             </div>
@@ -139,7 +139,7 @@ const MessageMe = () => {
                 onChange={handleChange}
                 required
                 className="w-full bg-[#180809] border border-[#79231C]/30 rounded-xl px-5 py-3.5 text-[#E7CEB0] font-oswald placeholder-[#E7CEB0]/30 focus:border-[#79231C] focus:outline-none focus:ring-2 focus:ring-[#79231C]/30 transition-all duration-300"
-                placeholder="john@example.com"
+                placeholder="YourName@gmail.com"
               />
               <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#79231C] group-focus-within:w-full transition-all duration-300"></div>
             </div>
@@ -197,7 +197,7 @@ const MessageMe = () => {
         <div className="mt-8 flex flex-wrap justify-center gap-6 text-center">
           <div className="bg-[#201011]/50 border border-[#79231C]/20 rounded-xl px-6 py-3 backdrop-blur-sm">
             <span className="text-[#E7CEB0]/40 font-oswald text-xs uppercase tracking-wider">Email</span>
-            <p className="text-[#E7CEB0] font-oswald text-sm">umer@example.com</p>
+            <p className="text-[#E7CEB0] font-oswald text-sm">umershakir987@gmail.com</p>
           </div>
           <div className="bg-[#201011]/50 border border-[#79231C]/20 rounded-xl px-6 py-3 backdrop-blur-sm">
             <span className="text-[#E7CEB0]/40 font-oswald text-xs uppercase tracking-wider">Response Time</span>

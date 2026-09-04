@@ -82,7 +82,7 @@ THROUGH SEAMLESS FULL-STACK ENGINEERING.</h1>
                 <img src="/SIGN.png" className=' w-[90px] h-[50px] ' alt="" srcset="" />
 
 <div>
-            <button onClick={()=>{navigate('message-me')}} className='p-3.5 pl-6 pr-6 bg-[#79231C] border-2 mt-3 border-[#E7CEB0] rounded-[10px]'>MESSAGE ME!</button>
+            <button onClick={()=>{navigate('message-me')}} className='p-3.5 pl-6 pr-6 bg-[#79231C] border-2 mt-3 cursor-pointer border-[#E7CEB0] rounded-[10px]'>MESSAGE ME!</button>
         </div>
         </div>
         
