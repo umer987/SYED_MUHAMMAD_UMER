@@ -8,7 +8,7 @@ const projects = [
     { id: 1, image: email, text: "umershakir987@gmail.com" },
     { id: 2, image: phone, text: "+92-3132711470" },
     { id: 3, image: web, text: "www.syedmuhammadumer.com" },
-    { id: 4, image: location, text: "PAKISTAN" },
+    { id: 4, image: location, text: "KARACHI, PAKISTAN" },
 ]
 
 function Letscollab() {
@@ -78,7 +78,11 @@ function Letscollab() {
 THROUGH SEAMLESS FULL-STACK ENGINEERING.</h1>
                 <img src="/SIGN.png" className=' w-[90px] h-[50px] ' alt="" srcset="" />
 
+<div>
+            <button className='p-9 bg-amber-300 rounded-2xl'>MESSAGE ME!</button>
         </div>
+        </div>
+        
     </div>
   )
 }
