@@ -136,7 +136,7 @@ const MessageMe = () => {
           <div className="mb-6 group">
             <label className="block text-[#E7CEB0] font-oswald text-sm mb-2 tracking-wider">
               <FaEnvelope className="inline mr-2 text-[#79231C]" />
-              Your 
+              Your Email
             </label>
             <div className="relative">
               <input
