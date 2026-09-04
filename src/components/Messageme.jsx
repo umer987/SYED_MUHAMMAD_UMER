@@ -6,10 +6,10 @@ const MessageMe = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectbrief: ''
+    projectbreif: '' // Changed to match schema field name
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
@@ -26,22 +26,29 @@ const MessageMe = () => {
     setSubmitStatus(null);
     setErrorMessage('');
 
+    // Log the data being sent
+    console.log('Sending data:', formData);
+
     try {
-      const response = await post('http://localhost:3000/api/message/message-me', formData);
+      const response = await axios.post('http://localhost:3000/api/message/message-me', formData, {
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
       console.log('Message sent:', response.data);
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', projectbrief: '' });
+      setFormData({ name: '', email: '', projectbreif: '' });
       
-      // Auto-hide success message after 5 seconds
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
     } catch (error) {
       console.error('Error sending message:', error);
+      console.error('Error response:', error.response?.data);
       setSubmitStatus('error');
       setErrorMessage(error.response?.data?.message || 'Failed to send message. Please try again.');
       
-      // Auto-hide error message after 5 seconds
       setTimeout(() => {
         setSubmitStatus(null);
         setErrorMessage('');
@@ -145,7 +152,7 @@ const MessageMe = () => {
             </div>
           </div>
 
-          {/* Project Brief Field */}
+          {/* Project Brief Field - FIXED: name="projectbreif" to match schema */}
           <div className="mb-8 group">
             <label className="block text-[#E7CEB0] font-oswald text-sm mb-2 tracking-wider">
               <FaProjectDiagram className="inline mr-2 text-[#79231C]" />
@@ -153,8 +160,8 @@ const MessageMe = () => {
             </label>
             <div className="relative">
               <textarea
-                name="projectbrief"
-                value={formData.projectbrief}
+                name="projectbreif"  // Changed to match schema
+                value={formData.projectbreif}  // Changed to match schema
                 onChange={handleChange}
                 required
                 rows="5"
@@ -169,7 +176,7 @@ const MessageMe = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#79231C] text-[#E7CEB0] font-oswald font-semibold px-8 py-4 rounded-xl hover:bg-[#79231C]/80 transition-all duration-300 flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#79231C]/30"
+            className="w-full bg-[#79231C] text-[#E7CEB0] font-oswald font-semibold px-8 py-4 rounded-xl hover:bg-[#79231C]/80 transition-all duration-300 flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#79231C]/30 relative"
           >
             {isSubmitting ? (
               <>
@@ -180,7 +187,6 @@ const MessageMe = () => {
               <>
                 <FaPaperPlane className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                 <span>Send Message</span>
-                <span className="absolute top-0 right-0 w-20 h-20 bg-[#E7CEB0]/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
               </>
             )}
           </button>
