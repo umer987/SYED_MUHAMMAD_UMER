@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaPaperPlane, FaUser, FaEnvelope, FaProjectDiagram, FaCheckCircle, FaSpinner } from 'react-icons/fa';
 import axios from 'axios';
-import api from './api'; // Your API configuration
 
 const MessageMe = () => {
   const [formData, setFormData] = useState({

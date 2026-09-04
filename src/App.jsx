@@ -9,6 +9,7 @@ import AdminDashboard from './components/AdminDashboard';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Projects from './components/Projects';
+import MessageMe from './components/Messageme';
 function App() {
   return (
     <div>
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/ad' element={<AdminLogin/>} />
           <Route path='/all-projects' element={ <Projects/> } />
+          <Route path='/message-me' element={ <MessageMe/> } />
           
           
          <Route element={<ProtectedRoute />}>
