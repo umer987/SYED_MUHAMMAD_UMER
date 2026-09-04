@@ -3,6 +3,7 @@ import location from "../assets/location.png";
 import web from "../assets/web.png";
 import email from "../assets/email.png";
 import phone from "../assets/phone.png";
+import { useNavigate } from 'react-router-dom';
 
 const projects = [
     { id: 1, image: email, text: "umershakir987@gmail.com" },
@@ -12,6 +13,8 @@ const projects = [
 ]
 
 function Letscollab() {
+      const navigate = useNavigate();
+
   return (
     <div
         className="
@@ -79,7 +82,7 @@ THROUGH SEAMLESS FULL-STACK ENGINEERING.</h1>
                 <img src="/SIGN.png" className=' w-[90px] h-[50px] ' alt="" srcset="" />
 
 <div>
-            <button className='p-9 bg-[#79231C] border border-[#E7CEB0] rounded-2xl'>MESSAGE ME!</button>
+            <button onClick={()=>{navigate('message-me')}} className='p-3.5 pl-6 pr-6 bg-[#79231C] border-2 mt-3 border-[#E7CEB0] rounded-[10px]'>MESSAGE ME!</button>
         </div>
         </div>
         
