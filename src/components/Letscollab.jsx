@@ -79,7 +79,7 @@ THROUGH SEAMLESS FULL-STACK ENGINEERING.</h1>
                 <img src="/SIGN.png" className=' w-[90px] h-[50px] ' alt="" srcset="" />
 
 <div>
-            <button className='p-9 bg-amber-300 rounded-2xl'>MESSAGE ME!</button>
+            <button className='p-9 bg-[#79231C] border border-[#E7CEB0] rounded-2xl'>MESSAGE ME!</button>
         </div>
         </div>
         
