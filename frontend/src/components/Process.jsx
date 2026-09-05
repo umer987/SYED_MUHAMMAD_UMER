@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Process() {
       const navigate = useNavigate();
+const API_BASE_URL = import.meta.env.PROJECT_ALL || 'http://localhost:3000/api';
 
     const process = [
         {
@@ -52,7 +53,7 @@ function Process() {
         const fetchProjects = async () => {
             try {
                 const response = await axios.get(
-                    'http://localhost:3000/api/project/all-project', 
+                    API_BASE_URL, 
                     { withCredentials: true }
                 );
                 const data = response.data.projects || response.data;
