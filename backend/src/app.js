@@ -24,15 +24,12 @@ const allowedOrigins = [
     process.env.FRONTEND_URL,
 ].filter(Boolean);
 
-const isAllowedOrigin = (origin) =>
-    allowedOrigins.includes(origin) || /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(origin);
-
 app.use(cors({
     origin: function (origin, callback) {
         // Allow requests with no origin (like mobile apps or curl)
         if (!origin) return callback(null, true);
         
-        if (isAllowedOrigin(origin)) {
+        if (allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
             console.log(`CORS blocked: ${origin}`);
