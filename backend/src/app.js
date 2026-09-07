@@ -1,15 +1,28 @@
 const cors = require('cors')
 const cookie =require('cookie-parser')
 const express  = require('express')
+const connectdb = require('./config/db')
 const app = express()
+
+const databaseConnection = connectdb()
+app.use(async (req, res, next) => {
+    try {
+        await databaseConnection
+        next()
+    } catch (error) {
+        console.error('DATABASE CONNECTION FAILED', error)
+        res.status(503).json({ message: 'Database unavailable' })
+    }
+})
 
 // Add your Vercel frontend URL
 const allowedOrigins = [
     'http://localhost:5173',              // Local Vite dev
     'http://localhost:3000',              // Local React dev
     'https://syed-m-umer.vercel.app',     // ← Your Vercel frontend
-    'https://syed-muhammad-umer-89kg.vercel.app', // Your backend (if needed)
-];
+    'https://syed-muhammad-umer-89kg.vercel.app',
+    process.env.FRONTEND_URL,
+].filter(Boolean);
 
 app.use(cors({
     origin: function (origin, callback) {

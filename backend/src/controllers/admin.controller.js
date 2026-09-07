@@ -19,8 +19,6 @@ async function admincontroller(req , res) {
 async function logincontroller(req , res) {
     const {email , password } = req.body 
     const admin = await adminmodel.findOne({ email: email });
-    const hash = await bcrypt.compare(password , admin.password)
-// If no admin is found, stop here and return an error
     if (!admin) {
         return res.status(401).json({ message: "Invalid email or password" });
     }
@@ -37,7 +35,11 @@ async function logincontroller(req , res) {
         process.env.JWT// Expire token after 1 day
     );
     // 4. Set the secure HttpOnly cookie
-    res.cookie("token", token);
+    res.cookie("token", token, {
+        httpOnly: true,
+        sameSite: 'lax',
+        secure: process.env.NODE_ENV === 'production'
+    });
 
     return res.status(200).json({
         message: "Login successful",

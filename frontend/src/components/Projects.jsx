@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../api";
 import { FaArrowRight, FaGithub, FaExternalLinkAlt, FaTimes, FaCode, FaLaptopCode } from "react-icons/fa";
 import Navbar from "./Navbar";
 
@@ -10,12 +10,7 @@ const Projects = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await axios.get(
-                    "http://localhost:3000/api/project/all-project",
-                    {
-                        withCredentials: true,
-                    }
-                );
+                const response = await api.get('/project/all-project');
                 const data = response.data.projects || response.data;
                 setProjects(data);
             } catch (error) {

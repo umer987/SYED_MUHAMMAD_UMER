@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { FaPaperPlane, FaUser, FaEnvelope, FaProjectDiagram, FaCheckCircle, FaSpinner } from 'react-icons/fa';
-import axios from 'axios';
+import api from '../api';
 
 const MessageMe = () => {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,8 +31,7 @@ const MessageMe = () => {
     console.log('Sending data:', formData);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/message/message-me', formData, {
-        withCredentials: true,
+      const response = await api.post('/message/message-me', formData, {
         headers: {
           'Content-Type': 'application/json'
         }

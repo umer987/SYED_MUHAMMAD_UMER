@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 
 const ClientMessages = () => {
   // 1. Initialize with an empty array instead of dummy data
@@ -10,10 +10,7 @@ const ClientMessages = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(
-          'http://localhost:3000/api/message/get-message', 
-          { withCredentials: true }
-        );
+        const response = await api.get('/message/get-message');
         
         // Ensure response.data is an array (adjust depending on your backend structure)
         const data = response.data.messages || response.data;

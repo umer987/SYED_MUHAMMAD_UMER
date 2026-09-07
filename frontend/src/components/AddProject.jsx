@@ -1,11 +1,11 @@
 import React from 'react';
-import axios from 'axios'
+import api from '../api'
 
 const AddProject = () => {
 const handle_submit = async (e)=>{
   e.preventDefault()
     const formdata = new FormData(e.target)
-    axios.post('http://localhost:3000/api/project/add-project' , formdata)
+    api.post('/project/add-project' , formdata)
     .then((res)=>{
       alert("data upload successfully")
     })

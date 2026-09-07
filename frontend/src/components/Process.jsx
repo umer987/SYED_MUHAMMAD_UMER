@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import axios from 'axios';
+import api from '../api';
 import discover from "../../assets/discover.png";
 import architect from "../../assets/architect.png";
 import ai from "../../assets/ai.png";
@@ -10,8 +10,6 @@ import { useNavigate } from 'react-router-dom';
 
 function Process() {
       const navigate = useNavigate();
-const API_BASE_URL = import.meta.env.PROJECT_ALL || 'http://localhost:3000/api';
-
     const process = [
         {
             number: "01",
@@ -52,10 +50,7 @@ const API_BASE_URL = import.meta.env.PROJECT_ALL || 'http://localhost:3000/api';
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await axios.get(
-                    API_BASE_URL, 
-                    { withCredentials: true }
-                );
+                const response = await api.get('/project/all-project');
                 const data = response.data.projects || response.data;
                 setProjects(data);
             } catch (err) {
