@@ -1,6 +1,13 @@
 const adminmodel = require("../config/models/admin.model")
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+
+const authCookieOptions = {
+    httpOnly: true,
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+    secure: process.env.NODE_ENV === 'production'
+}
+
 async function admincontroller(req , res) {
     const {email , name , password } = req.body 
  const hash = await bcrypt.hash(password,10)
@@ -10,7 +17,7 @@ async function admincontroller(req , res) {
         password:hash
     })
     const token = jwt.sign({id:admin._id},process.env.JWT)
-    res.cookie("token", token)
+    res.cookie("token", token, authCookieOptions)
      return res.status(200).json({
           email , name , password , token
     })
@@ -35,11 +42,7 @@ async function logincontroller(req , res) {
         process.env.JWT// Expire token after 1 day
     );
     // 4. Set the secure HttpOnly cookie
-    res.cookie("token", token, {
-        httpOnly: true,
-        sameSite: 'lax',
-        secure: process.env.NODE_ENV === 'production'
-    });
+    res.cookie("token", token, authCookieOptions);
 
     return res.status(200).json({
         message: "Login successful",
@@ -108,26 +111,21 @@ async function logoutController(req, res) {
         }
 
         // 1. MUST MATCH THE LOGIN COOKIE OPTIONS EXACTLY
-        const cookieOptions = { 
-            httpOnly: true, 
-            sameSite: 'lax' 
-        };
-
         try {
             const decoded = jwt.verify(token, process.env.JWT);
             
             const admin = await adminmodel.findById(decoded.id);
             if (!admin) {
-                res.clearCookie("token", cookieOptions); // Added options here
+                res.clearCookie("token", authCookieOptions);
                 return res.status(401).json({ message: "User no longer exists." });
             }
         } catch (jwtError) {
-            res.clearCookie("token", cookieOptions); // Added options here
+            res.clearCookie("token", authCookieOptions);
             return res.status(401).json({ message: "Invalid session." });
         }
 
         // 2. Clear the token with the exact same options (CRITICAL FIX)
-        res.clearCookie("token", cookieOptions);
+        res.clearCookie("token", authCookieOptions);
 
         return res.status(200).json({
             message: "Logout successful"
