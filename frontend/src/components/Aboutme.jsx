@@ -60,10 +60,10 @@ function Aboutme() {
                 LEFT SIDE — ABOUT ME
             ====================================================== */}
 
-            <div className="w-full lg:w-[50%]">
+            <div className="w-full lg:w-[50%] flex flex-col items-center md:items-start">
 
                 {/* Heading */}
-                <div className="mb-6">
+                <div className="mb-6 flex flex-col items-center text-center md:items-start md:text-left w-full">
 
                     <h1
                         className="
@@ -77,7 +77,7 @@ function Aboutme() {
                         ABOUT ME
                     </h1>
 
-                    <div className="w-[50px] h-[4px] bg-[var(--bg-red)] mt-1"></div>
+                    <div className="w-[50px] h-[4px] bg-[var(--bg-red)] mt-1 mx-auto md:mx-0"></div>
 
                 </div>
 
@@ -90,7 +90,10 @@ function Aboutme() {
                         md:flex-row
                         gap-5
                         md:gap-6
-                        items-start
+                        items-center
+                        md:items-start
+                        text-center
+                        md:text-left
                     "
                 >
 
@@ -98,13 +101,17 @@ function Aboutme() {
                     <img
                         src="/umer3.jpg"
                         className="
-                            w-[200px]
-                            h-[250px]
+                            w-[180px]
+                            h-[230px]
+                            sm:w-[200px]
+                            sm:h-[250px]
                             md:w-[220px]
                             md:h-[280px]
                             rounded-[10px]
                             object-cover
                             shrink-0
+                            mx-auto
+                            md:mx-0
                         "
                         alt="Umer"
                     />
@@ -118,6 +125,10 @@ function Aboutme() {
                             min-w-0
                             mt-1
                             md:mt-0
+                            flex
+                            flex-col
+                            items-center
+                            md:items-start
                         "
                     >
 
@@ -137,7 +148,7 @@ function Aboutme() {
 
 
                         {/* Skills */}
-                        <ul className="mt-4 space-y-1">
+                        <ul className="mt-4 space-y-1 inline-block text-left">
 
                             <li className="flex items-center gap-2">
                                 <span className="w-[7px] h-[7px] rounded-full bg-[#79231C] shrink-0"></span>
@@ -180,17 +191,24 @@ function Aboutme() {
                 "
             ></div>
 
+            {/* Mobile divider */}
+            <div className="block lg:hidden w-full h-[1px] bg-[var(--bg-red)] my-8"></div>
+
 
             <div
                 className="
                     w-full
                     lg:w-[50%]
-                    mt-8
+                    mt-2
                     lg:mt-0
+                    flex
+                    flex-col
+                    items-center
+                    lg:items-start
                 "
             >
 
-                <div className="mb-6">
+                <div className="mb-6 flex flex-col items-center text-center lg:items-start lg:text-left w-full">
 
                     <h1
                         className="
@@ -204,12 +222,12 @@ function Aboutme() {
                         TOOLS I USE
                     </h1>
 
-                    <div className="w-[50px] h-[4px] bg-[var(--bg-red)] mt-1"></div>
+                    <div className="w-[50px] h-[4px] bg-[var(--bg-red)] mt-1 mx-auto lg:mx-0"></div>
 
                 </div>
 
 
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 max-w-[880px]">
 
                     {projects.map((project) => (
     <div
@@ -221,9 +239,9 @@ function Aboutme() {
             duration-300
             ease-out
             hover:-translate-y-1
-            hover:shadow-[0_5px_15px_rgba(121,35,28,0.4)] /* Adds a subtle red glow underneath */
-            w-[60px]
-            h-[60px]
+            hover:shadow-[0_5px_15px_rgba(121,35,28,0.4)]
+            w-[55px]
+            h-[55px]
             sm:w-[65px]
             sm:h-[65px]
             border
@@ -240,9 +258,9 @@ function Aboutme() {
                 transition-transform
                 duration-300
                 ease-out
-                group-hover:scale-125 /* Scales the image up by 25% on hover */
-                w-[38px]
-                h-[38px]
+                group-hover:scale-125
+                w-[34px]
+                h-[34px]
                 sm:w-[40px]
                 sm:h-[40px]
                 object-contain
@@ -272,6 +290,8 @@ function Aboutme() {
                         rounded-bl-3xl
                         rounded-tr-3xl
                         mt-5
+                        mx-auto
+                        lg:mx-0
                     "
                 >
 
@@ -280,8 +300,10 @@ function Aboutme() {
                         <img
                             src="/comma.png"
                             className="
-                                w-[50px]
-                                h-[35px]
+                                w-[45px]
+                                h-[32px]
+                                sm:w-[50px]
+                                sm:h-[35px]
                                 md:w-[60px]
                                 md:h-[40px]
                                 object-contain

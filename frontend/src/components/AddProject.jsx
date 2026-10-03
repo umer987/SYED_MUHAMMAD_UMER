@@ -16,9 +16,9 @@ const AddProject = () => {
   }
 
   return (
-    <div className="flex items-center justify-center font-oswald w-full">
-      <div className="bg-[#201011] border border-[#79231C] p-8 rounded-lg w-full max-w-2xl shadow-lg mt-8 mb-8">
-        <h2 className="text-3xl text-white text-center mb-8 tracking-wide">UPLOAD NEW PROJECT</h2>
+    <div className="flex items-center justify-center font-oswald w-full p-3 sm:p-6">
+      <div className="bg-[#201011] border border-[#79231C] p-4 sm:p-8 rounded-lg w-full max-w-2xl shadow-lg my-4 sm:my-8">
+        <h2 className="text-2xl sm:text-3xl text-white text-center mb-6 sm:mb-8 tracking-wide">UPLOAD NEW PROJECT</h2>
 
         <form className="flex flex-col gap-6" method="POST" encType="multipart/form-data" onSubmit={handle_submit}>
           <div className="flex flex-col gap-2">

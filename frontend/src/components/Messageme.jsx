@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaPaperPlane, FaUser, FaEnvelope, FaProjectDiagram, FaCheckCircle, FaSpinner } from 'react-icons/fa';
 import api from '../api';
+import Navbar from './Navbar';
 
 const MessageMe = () => {
 
@@ -59,7 +60,7 @@ const MessageMe = () => {
   };
 
   return (
-    <section className="relative bg-[#180809] py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative bg-[#180809] py-8 sm:py-16 px-3 sm:px-6 lg:px-8 overflow-hidden min-h-screen">
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-64 h-64 bg-[#79231C]/5 rounded-full blur-3xl"></div>
@@ -67,16 +68,18 @@ const MessageMe = () => {
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
+        <Navbar />
+
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mt-6 mb-10 sm:mb-12">
           <div className="inline-block relative">
             <span className="absolute -top-2 -left-2 w-3 h-3 bg-[#79231C] rotate-45"></span>
             <span className="absolute -bottom-2 -right-2 w-3 h-3 bg-[#79231C] rotate-45"></span>
-            <p className="text-[#E7CEB0] font-oswald tracking-[0.3em] text-sm uppercase mb-2 opacity-60">
+            <p className="text-[#E7CEB0] font-oswald tracking-[0.3em] text-xs sm:text-sm uppercase mb-2 opacity-60">
               Get in Touch
             </p>
           </div>
-          <h2 className="font-oswald text-4xl sm:text-5xl md:text-6xl text-[#E7CEB0] font-bold tracking-wider">
+          <h2 className="font-oswald text-3xl sm:text-5xl md:text-6xl text-[#E7CEB0] font-bold tracking-wider">
             <span className="relative">
               Send Me
               <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-[#79231C]"></span>
@@ -89,13 +92,13 @@ const MessageMe = () => {
             <div className="w-4 h-[2px] bg-[#79231C]"></div>
             <div className="w-12 h-[2px] bg-[#79231C]"></div>
           </div>
-          <p className="text-[#E7CEB0]/60 font-oswald mt-4 text-sm md:text-base max-w-2xl mx-auto">
+          <p className="text-[#E7CEB0]/60 font-oswald mt-4 text-xs sm:text-sm md:text-base max-w-2xl mx-auto px-2">
             Have a project in mind? Let's discuss how we can bring your ideas to life.
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-[#201011] border border-[#79231C]/30 rounded-3xl p-6 md:p-10 shadow-2xl hover:border-[#79231C]/60 transition-all duration-500">
+        <form onSubmit={handleSubmit} className="bg-[#201011] border border-[#79231C]/30 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl hover:border-[#79231C]/60 transition-all duration-500">
           {/* Success Message */}
           {submitStatus === 'success' && (
             <div className="mb-6 p-4 bg-[#79231C]/20 border border-[#79231C] rounded-xl flex items-center gap-3 animate-fadeIn">

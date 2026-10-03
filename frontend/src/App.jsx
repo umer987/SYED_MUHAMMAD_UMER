@@ -12,7 +12,7 @@ import Projects from './components/Projects';
 import MessageMe from './components/Messageme';
 function App() {
   return (
-    <div>
+    <div className="w-full max-w-full overflow-x-hidden min-h-screen bg-black">
      <AuthProvider>
         <BrowserRouter>
         <Routes>  

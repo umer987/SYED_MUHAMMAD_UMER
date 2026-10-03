@@ -49,25 +49,25 @@ const ClientMessages = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black font-oswald p-8">
+    <div className="min-h-screen bg-black font-oswald p-4 sm:p-8">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl text-white mb-8 border-b-2 border-[#79231C] inline-block pr-8 pb-2 tracking-wide">
+        <h2 className="text-2xl sm:text-4xl text-white mb-6 sm:mb-8 border-b-2 border-[#79231C] inline-block pr-4 sm:pr-8 pb-2 tracking-wide">
           CLIENT MESSAGES
         </h2>
         
         {/* 4. Handle Empty State gracefully */}
         {messages.length === 0 ? (
-          <p className="text-gray-400 text-xl tracking-wider">NO MESSAGES FOUND.</p>
+          <p className="text-gray-400 text-lg sm:text-xl tracking-wider">NO MESSAGES FOUND.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {messages.map((msg) => (
               <div 
                 key={msg._id} 
-                className="bg-[#201011] border border-[#79231C] p-6 rounded-lg flex flex-col gap-4 shadow-lg transition-transform hover:scale-[1.02]"
+                className="bg-[#201011] border border-[#79231C] p-4 sm:p-6 rounded-lg flex flex-col gap-4 shadow-lg transition-transform hover:scale-[1.02]"
               >
                 <div className="border-b border-[#79231C] pb-4">
-                  <h3 className="text-2xl text-white tracking-wide">{msg.name}</h3>
-                  <a href={`mailto:${msg.email}`} className="text-[#79231C] hover:text-red-400 tracking-wider">
+                  <h3 className="text-xl sm:text-2xl text-white tracking-wide">{msg.name}</h3>
+                  <a href={`mailto:${msg.email}`} className="text-[#79231C] hover:text-red-400 tracking-wider break-all text-sm sm:text-base">
                     {msg.email}
                   </a>
                 </div>

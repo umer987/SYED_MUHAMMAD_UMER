@@ -23,19 +23,19 @@ const handlelogout = async () =>{
     <div className="min-h-screen bg-black font-oswald flex flex-col">
       
       {/* Top Navigation Bar */}
-      <nav className="bg-[#201011] border-b border-[#79231C] px-8 py-4 shadow-lg sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
+      <nav className="bg-[#201011] border-b border-[#79231C] px-4 sm:px-8 py-3 sm:py-4 shadow-lg sticky top-0 z-10">
+        <div className="max-w-6xl mx-auto flex flex-wrap gap-3 sm:gap-6 justify-between items-center">
           
           {/* Logo / Title */}
-          <h1 className="text-2xl text-white tracking-widest uppercase">
+          <h1 className="text-xl sm:text-2xl text-white tracking-widest uppercase">
             Admin <span className="text-[#79231C]">Panel</span>
           </h1>
 
           {/* Navigation Buttons */}
-          <div className="flex gap-8">
+          <div className="flex gap-4 sm:gap-8">
             <button 
               onClick={() => setActivePage('messages')}
-              className={`tracking-widest transition-colors text-lg ${
+              className={`tracking-widest transition-colors text-sm sm:text-lg ${
                 activePage === 'messages' 
                   ? 'text-[#79231C] border-b-2 border-[#79231C]' 
                   : 'text-gray-300 hover:text-[#79231C]'
@@ -46,7 +46,7 @@ const handlelogout = async () =>{
 
             <button 
               onClick={() => setActivePage('addProject')}
-              className={`tracking-widest transition-colors text-lg ${
+              className={`tracking-widest transition-colors text-sm sm:text-lg ${
                 activePage === 'addProject' 
                   ? 'text-[#79231C] border-b-2 border-[#79231C]' 
                   : 'text-gray-300 hover:text-[#79231C]'
@@ -58,7 +58,7 @@ const handlelogout = async () =>{
 
           {/* Logout Button */}
           <button 
-            className="text-gray-300 hover:text-red-500 tracking-widest transition-colors"
+            className="text-gray-300 hover:text-red-500 tracking-widest transition-colors text-sm sm:text-base"
             onClick={() => handlelogout()}
           >
             LOGOUT

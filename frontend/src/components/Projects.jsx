@@ -22,7 +22,7 @@ const Projects = () => {
     }, []);
 
     return (
-        <section className="min-h-screen bg-[#180809] py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <section className="min-h-screen bg-[#180809] py-8 sm:py-16 px-3 sm:px-6 lg:px-8 relative overflow-hidden">
           <Navbar/>
             {/* Creative Background Elements */}
             <div className=" mt-8 absolute inset-0 pointer-events-none">
@@ -35,15 +35,15 @@ const Projects = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Creative Header */}
-                <div className="text-center mb-16 relative">
+                <div className="text-center mb-10 sm:mb-16 relative">
                     <div className="inline-block relative">
                         <span className="absolute -top-2 -left-2 w-3 h-3 bg-[#79231C] rotate-45"></span>
                         <span className="absolute -bottom-2 -right-2 w-3 h-3 bg-[#79231C] rotate-45"></span>
-                        <p className="text-[#E7CEB0] font-oswald tracking-[0.3em] text-sm uppercase mb-2 opacity-60">
+                        <p className="text-[#E7CEB0] font-oswald tracking-[0.3em] text-xs sm:text-sm uppercase mb-2 opacity-60">
                             SYED MUHAMMAD UMER
                         </p>
                     </div>
-                    <h1 className="font-oswald text-5xl sm:text-6xl md:text-7xl text-[#E7CEB0] font-bold tracking-wider">
+                    <h1 className="font-oswald text-4xl sm:text-6xl md:text-7xl text-[#E7CEB0] font-bold tracking-wider">
                         <span className="relative">
                             Featured
                             <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-[#79231C]"></span>
@@ -155,25 +155,25 @@ const Projects = () => {
                 {/* Creative Project Modal */}
                 {selectedProject && (
                     <div
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#180809]/98 backdrop-blur-xl animate-fadeIn"
+                        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#180809]/98 backdrop-blur-xl animate-fadeIn"
                         onClick={() => setSelectedProject(null)}
                     >
                         <div
-                            className="bg-[#201011] rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-[#79231C]/50 animate-slideUp relative"
+                            className="bg-[#201011] rounded-2xl sm:rounded-3xl max-w-5xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-[#79231C]/50 animate-slideUp relative"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Creative Close Button */}
                             <button
-                                className="absolute top-6 right-6 z-10 bg-[#180809] text-[#E7CEB0] w-14 h-14 rounded-full flex items-center justify-center hover:bg-[#79231C] hover:text-white transition-all duration-500 shadow-xl border border-[#79231C] group"
+                                className="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 bg-[#180809] text-[#E7CEB0] w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center hover:bg-[#79231C] hover:text-white transition-all duration-500 shadow-xl border border-[#79231C] group"
                                 onClick={() => setSelectedProject(null)}
                             >
-                                <FaTimes className="text-xl group-hover:rotate-90 transition-transform duration-500" />
+                                <FaTimes className="text-base sm:text-xl group-hover:rotate-90 transition-transform duration-500" />
                             </button>
 
                             {/* Modal Content - Creative Layout */}
                             <div className="relative">
                                 {/* Image with Gradient */}
-                                <div className="relative h-[50vh] bg-[#180809] overflow-hidden">
+                                <div className="relative h-[30vh] sm:h-[45vh] md:h-[50vh] bg-[#180809] overflow-hidden">
                                     <img
                                         src={selectedProject.image}
                                         alt={selectedProject.title}
@@ -183,46 +183,46 @@ const Projects = () => {
                                     <div className="absolute inset-0 bg-gradient-to-r from-[#180809]/50 to-transparent"></div>
 
                                     {/* Creative Category in Modal */}
-                                    <div className="absolute bottom-8 left-8 flex items-center gap-4">
-                                        <span className="bg-[#79231C] text-[#E7CEB0] text-sm font-oswald font-medium px-6 py-2.5 rounded-full shadow-2xl transform -rotate-2">
+                                    <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 flex items-center gap-3 sm:gap-4">
+                                        <span className="bg-[#79231C] text-[#E7CEB0] text-xs sm:text-sm font-oswald font-medium px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full shadow-2xl transform -rotate-2">
                                             {selectedProject.category || 'Project'}
                                         </span>
                                         <div className="flex items-center gap-2 text-[#E7CEB0]/40">
-                                            <div className="w-8 h-[2px] bg-[#79231C]"></div>
-                                            <span className="font-oswald text-xs tracking-wider">FEATURED</span>
+                                            <div className="w-6 sm:w-8 h-[2px] bg-[#79231C]"></div>
+                                            <span className="font-oswald text-[10px] sm:text-xs tracking-wider">FEATURED</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Details with Creative Layout */}
-                                <div className="p-8 md:p-10 -mt-12 relative z-10">
-                                    <div className="bg-[#201011]/90 backdrop-blur-sm rounded-2xl p-8 border border-[#79231C]/30">
+                                <div className="p-4 sm:p-8 md:p-10 -mt-6 sm:-mt-12 relative z-10">
+                                    <div className="bg-[#201011]/90 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-[#79231C]/30">
                                         <div className="flex items-start gap-2 mb-4">
-                                            <div className="w-1 h-8 bg-[#79231C]"></div>
-                                            <h2 className="font-oswald text-4xl md:text-5xl text-[#E7CEB0] font-bold tracking-wide leading-tight">
+                                            <div className="w-1 h-6 sm:h-8 bg-[#79231C] shrink-0 mt-1"></div>
+                                            <h2 className="font-oswald text-2xl sm:text-4xl md:text-5xl text-[#E7CEB0] font-bold tracking-wide leading-tight">
                                                 {selectedProject.title}
                                             </h2>
                                         </div>
 
-                                        <p className="font-oswald text-base text-[#E7CEB0]/70 leading-relaxed mb-8 pl-3 border-l-2 border-[#79231C]/30">
+                                        <p className="font-oswald text-sm sm:text-base text-[#E7CEB0]/70 leading-relaxed mb-6 sm:mb-8 pl-3 border-l-2 border-[#79231C]/30">
                                             {selectedProject.description || selectedProject.discription || 'Project showcase'}
                                         </p>
 
                                         {/* Technologies with Creative Display */}
                                         {selectedProject.technologies && selectedProject.technologies.length > 0 && (
-                                            <div className="mb-8">
+                                            <div className="mb-6 sm:mb-8">
                                                 <div className="flex items-center gap-3 mb-4">
                                                     <FaCode className="text-[#79231C]" />
-                                                    <h4 className="font-oswald text-sm font-semibold text-[#E7CEB0] uppercase tracking-wider">
+                                                    <h4 className="font-oswald text-xs sm:text-sm font-semibold text-[#E7CEB0] uppercase tracking-wider">
                                                         Tech Stack
                                                     </h4>
                                                     <div className="flex-1 h-[1px] bg-[#79231C]/30"></div>
                                                 </div>
-                                                <div className="flex flex-wrap gap-3">
+                                                <div className="flex flex-wrap gap-2 sm:gap-3">
                                                     {selectedProject.technologies.map((tech, index) => (
                                                         <span
                                                             key={index}
-                                                            className="bg-[#180809] border border-[#79231C]/40 text-[#E7CEB0] text-sm font-oswald px-5 py-2 rounded-full shadow-lg hover:border-[#79231C] transition-all duration-300 hover:scale-105 hover:shadow-[#79231C]/20"
+                                                            className="bg-[#180809] border border-[#79231C]/40 text-[#E7CEB0] text-xs sm:text-sm font-oswald px-3 py-1.5 sm:px-5 sm:py-2 rounded-full shadow-lg hover:border-[#79231C] transition-all duration-300 hover:scale-105 hover:shadow-[#79231C]/20"
                                                         >
                                                             {tech}
                                                         </span>
@@ -232,15 +232,15 @@ const Projects = () => {
                                         )}
 
                                         {/* Creative Links */}
-                                        <div className="flex flex-wrap gap-4 pt-6 border-t border-[#79231C]/20">
+                                        <div className="flex flex-wrap gap-3 sm:gap-4 pt-6 border-t border-[#79231C]/20">
                                             {selectedProject.liveLink && (
                                                 <a
                                                     href={selectedProject.liveLink}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-3 bg-[#E7CEB0] text-[#180809] font-oswald px-8 py-3.5 rounded-full hover:bg-[#79231C] hover:text-[#E7CEB0] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#79231C]/30 group"
+                                                    className="inline-flex items-center gap-2 sm:gap-3 bg-[#E7CEB0] text-[#180809] font-oswald px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-full hover:bg-[#79231C] hover:text-[#E7CEB0] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#79231C]/30 text-xs sm:text-base group"
                                                 >
-                                                    <FaExternalLinkAlt className="text-sm group-hover:rotate-12 transition-transform duration-300" />
+                                                    <FaExternalLinkAlt className="text-xs sm:text-sm group-hover:rotate-12 transition-transform duration-300" />
                                                     LIVE DEMO <span className="font-bold">↗</span>
                                                 </a>
                                             )}
@@ -249,9 +249,9 @@ const Projects = () => {
                                                     href={selectedProject.github}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-3 border-2 border-[#79231C]/50 text-[#E7CEB0] font-oswald px-8 py-3.5 rounded-full hover:bg-[#79231C]/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#79231C]/10 group"
+                                                    className="inline-flex items-center gap-2 sm:gap-3 border-2 border-[#79231C]/50 text-[#E7CEB0] font-oswald px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-full hover:bg-[#79231C]/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#79231C]/10 text-xs sm:text-base group"
                                                 >
-                                                    <FaGithub className="text-sm group-hover:rotate-12 transition-transform duration-300" />
+                                                    <FaGithub className="text-xs sm:text-sm group-hover:rotate-12 transition-transform duration-300" />
                                                     Source Code
                                                 </a>
                                             )}
