@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import image1 from "../assets/image1.png";
 import image2 from "../assets/image2.png";
@@ -18,6 +20,8 @@ import image17 from "../assets/image17.png";
 import image18 from "../assets/image18.png";
 import image19 from "../assets/image19.png";
 import image20 from "../assets/image20.png";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
     { id: 1, image: image1 },
@@ -41,8 +45,102 @@ const projects = [
 ];
 
 function Aboutme() {
+    const containerRef = useRef(null);
+    const profileImgRef = useRef(null);
+    const aboutTextRef = useRef(null);
+    const toolsGridRef = useRef(null);
+    const testimonialRef = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            // Profile image reveal
+            if (profileImgRef.current) {
+                gsap.fromTo(
+                    profileImgRef.current,
+                    { scale: 0.85, opacity: 0, y: 25 },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.9,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: profileImgRef.current,
+                            start: "top 85%",
+                        },
+                    }
+                );
+            }
+
+            // About text & bullets reveal
+            if (aboutTextRef.current) {
+                gsap.fromTo(
+                    aboutTextRef.current.children,
+                    { opacity: 0, x: 25 },
+                    {
+                        opacity: 1,
+                        x: 0,
+                        stagger: 0.12,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: aboutTextRef.current,
+                            start: "top 85%",
+                        },
+                    }
+                );
+            }
+
+            // Tool icons staggered popping entrance
+            if (toolsGridRef.current) {
+                gsap.fromTo(
+                    toolsGridRef.current.children,
+                    { scale: 0, opacity: 0, rotation: -12 },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        rotation: 0,
+                        stagger: {
+                            amount: 0.65,
+                            from: "center",
+                            grid: "auto",
+                        },
+                        duration: 0.5,
+                        ease: "back.out(2)",
+                        scrollTrigger: {
+                            trigger: toolsGridRef.current,
+                            start: "top 85%",
+                        },
+                    }
+                );
+            }
+
+            // Testimonial card bounce-in
+            if (testimonialRef.current) {
+                gsap.fromTo(
+                    testimonialRef.current,
+                    { opacity: 0, y: 35, scale: 0.95 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: testimonialRef.current,
+                            start: "top 90%",
+                        },
+                    }
+                );
+            }
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
         <div
+            ref={containerRef}
             className="
                 w-full
                 flex
@@ -53,6 +151,8 @@ function Aboutme() {
                 bg-[var(--bg-w)]
                 p-5
                 md:p-6
+                relative
+                overflow-hidden
             "
         >
 
@@ -98,26 +198,39 @@ function Aboutme() {
                 >
 
                     {/* Profile Image */}
-                    <img
-                        src="/umer3.jpg"
-                        className="
-                            w-[180px]
-                            h-[230px]
-                            sm:w-[200px]
-                            sm:h-[250px]
-                            md:w-[220px]
-                            md:h-[280px]
-                            rounded-[10px]
-                            object-cover
-                            shrink-0
-                            mx-auto
-                            md:mx-0
-                        "
-                        alt="Umer"
-                    />
+                    <div className="relative group shrink-0">
+                        <div className="absolute inset-0 bg-[#79231C]/30 rounded-[12px] blur-lg group-hover:bg-[#79231C]/50 transition-all duration-500 pointer-events-none"></div>
+                        <img
+                            ref={profileImgRef}
+                            src="/umer3.jpg"
+                            className="
+                                w-[180px]
+                                h-[230px]
+                                sm:w-[200px]
+                                sm:h-[250px]
+                                md:w-[220px]
+                                md:h-[280px]
+                                rounded-[10px]
+                                object-cover
+                                shrink-0
+                                mx-auto
+                                md:mx-0
+                                relative
+                                z-10
+                                border
+                                border-[#79231C]/60
+                                shadow-xl
+                                transition-transform
+                                duration-500
+                                group-hover:scale-103
+                            "
+                            alt="Umer"
+                        />
+                    </div>
 
 
                     <div
+                        ref={aboutTextRef}
                         className="
                             font-oswald
                             text-[var(--text-bg)]
@@ -148,26 +261,26 @@ function Aboutme() {
 
 
                         {/* Skills */}
-                        <ul className="mt-4 space-y-1 inline-block text-left">
+                        <ul className="mt-4 space-y-1.5 inline-block text-left">
 
-                            <li className="flex items-center gap-2">
-                                <span className="w-[7px] h-[7px] rounded-full bg-[#79231C] shrink-0"></span>
-                                Detail oriented
+                            <li className="flex items-center gap-2 group cursor-default">
+                                <span className="w-[7px] h-[7px] rounded-full bg-[#79231C] shrink-0 group-hover:bg-[#ff2b2b] group-hover:scale-125 transition-all"></span>
+                                <span className="group-hover:text-white transition-colors">Detail oriented</span>
                             </li>
 
-                            <li className="flex items-center gap-2">
-                                <span className="w-[7px] h-[7px] rounded-full bg-[#79231C] shrink-0"></span>
-                                Problem solver
+                            <li className="flex items-center gap-2 group cursor-default">
+                                <span className="w-[7px] h-[7px] rounded-full bg-[#79231C] shrink-0 group-hover:bg-[#ff2b2b] group-hover:scale-125 transition-all"></span>
+                                <span className="group-hover:text-white transition-colors">Problem solver</span>
                             </li>
 
-                            <li className="flex items-center gap-2">
-                                <span className="w-[7px] h-[7px] rounded-full bg-[#79231C] shrink-0"></span>
-                                Scalable & efficient
+                            <li className="flex items-center gap-2 group cursor-default">
+                                <span className="w-[7px] h-[7px] rounded-full bg-[#79231C] shrink-0 group-hover:bg-[#ff2b2b] group-hover:scale-125 transition-all"></span>
+                                <span className="group-hover:text-white transition-colors">Scalable & efficient</span>
                             </li>
 
-                            <li className="flex items-center gap-2">
-                                <span className="w-[7px] h-[7px] rounded-full bg-[#79231C] shrink-0"></span>
-                                AI/ML focused
+                            <li className="flex items-center gap-2 group cursor-default">
+                                <span className="w-[7px] h-[7px] rounded-full bg-[#79231C] shrink-0 group-hover:bg-[#ff2b2b] group-hover:scale-125 transition-all"></span>
+                                <span className="group-hover:text-white transition-colors">AI/ML focused</span>
                             </li>
 
                         </ul>
@@ -227,59 +340,61 @@ function Aboutme() {
                 </div>
 
 
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 max-w-[880px]">
+                <div ref={toolsGridRef} className="flex flex-wrap items-center justify-center lg:justify-start gap-2 max-w-[480px]">
 
                     {projects.map((project) => (
-    <div
-        key={project.id}
-        className="
-            group
-            cursor-pointer
-            transition-all
-            duration-300
-            ease-out
-            hover:-translate-y-1
-            hover:shadow-[0_5px_15px_rgba(121,35,28,0.4)]
-            w-[55px]
-            h-[55px]
-            sm:w-[65px]
-            sm:h-[65px]
-            border
-            border-[var(--bg-red)]
-            flex
-            justify-center
-            items-center
-            rounded-[10px]
-            shrink-0
-        "
-    >
-        <img
-            className="
-                transition-transform
-                duration-300
-                ease-out
-                group-hover:scale-125
-                w-[34px]
-                h-[34px]
-                sm:w-[40px]
-                sm:h-[40px]
-                object-contain
-            "
-            src={project.image}
-            alt={`Tool ${project.id}`}
-        />
-    </div>
-))}
+                        <div
+                            key={project.id}
+                            className="
+                                group
+                                cursor-pointer
+                                transition-all
+                                duration-300
+                                ease-out
+                                hover:-translate-y-1.5
+                                hover:shadow-[0_6px_20px_rgba(255,43,43,0.35)]
+                                hover:border-[#ff2b2b]
+                                w-[55px]
+                                h-[55px]
+                                sm:w-[65px]
+                                sm:h-[65px]
+                                border
+                                border-[var(--bg-red)]
+                                flex
+                                justify-center
+                                items-center
+                                rounded-[10px]
+                                shrink-0
+                                bg-black/40
+                                backdrop-blur-xs
+                            "
+                        >
+                            <img
+                                className="
+                                    transition-transform
+                                    duration-300
+                                    ease-out
+                                    group-hover:scale-125
+                                    w-[34px]
+                                    h-[34px]
+                                    sm:w-[40px]
+                                    sm:h-[40px]
+                                    object-contain
+                                "
+                                src={project.image}
+                                alt={`Tool ${project.id}`}
+                            />
+                        </div>
+                    ))}
 
                 </div>
 
 
-                
-
                 <div
+                    ref={testimonialRef}
                     className="
-                        p-3
-                        md:p-3.5
+                        p-3.5
+                        md:p-4
                         bg-[var(--bg-w)]
                         flex
                         w-full
@@ -292,6 +407,10 @@ function Aboutme() {
                         mt-5
                         mx-auto
                         lg:mx-0
+                        shadow-lg
+                        hover:border-[#ff2b2b]
+                        transition-all
+                        duration-500
                     "
                 >
 
@@ -339,6 +458,7 @@ function Aboutme() {
                                 text-[10px]
                                 md:text-xs
                                 mt-2
+                                text-[#E7CEB0]/80
                             "
                         >
                             - CEO Better Future Pakistan (BFFP)

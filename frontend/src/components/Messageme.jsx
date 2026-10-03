@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaPaperPlane, FaUser, FaEnvelope, FaProjectDiagram, FaCheckCircle, FaSpinner } from 'react-icons/fa';
+import gsap from 'gsap';
 import api from '../api';
 import Navbar from './Navbar';
 
 const MessageMe = () => {
+  const formRef = useRef(null);
+  const headerRef = useRef(null);
+  const infoRef = useRef(null);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -59,6 +63,30 @@ const MessageMe = () => {
     }
   };
 
+  useEffect(() => {
+    if (headerRef.current) {
+      gsap.fromTo(
+        headerRef.current,
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }
+      );
+    }
+    if (formRef.current) {
+      gsap.fromTo(
+        formRef.current,
+        { y: 40, opacity: 0, scale: 0.98 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.9, ease: 'power3.out', delay: 0.15 }
+      );
+    }
+    if (infoRef.current) {
+      gsap.fromTo(
+        infoRef.current.children,
+        { y: 25, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.1, duration: 0.7, ease: 'power3.out', delay: 0.3 }
+      );
+    }
+  }, []);
+
   return (
     <section className="relative bg-[#180809] py-8 sm:py-16 px-3 sm:px-6 lg:px-8 overflow-hidden min-h-screen">
       {/* Background Decorations */}
@@ -71,7 +99,7 @@ const MessageMe = () => {
         <Navbar />
 
         {/* Header */}
-        <div className="text-center mt-6 mb-10 sm:mb-12">
+        <div ref={headerRef} className="text-center mt-6 mb-10 sm:mb-12">
           <div className="inline-block relative">
             <span className="absolute -top-2 -left-2 w-3 h-3 bg-[#79231C] rotate-45"></span>
             <span className="absolute -bottom-2 -right-2 w-3 h-3 bg-[#79231C] rotate-45"></span>
@@ -98,7 +126,7 @@ const MessageMe = () => {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-[#201011] border border-[#79231C]/30 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl hover:border-[#79231C]/60 transition-all duration-500">
+        <form ref={formRef} onSubmit={handleSubmit} className="bg-[#201011] border border-[#79231C]/30 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl hover:border-[#79231C]/60 transition-all duration-500">
           {/* Success Message */}
           {submitStatus === 'success' && (
             <div className="mb-6 p-4 bg-[#79231C]/20 border border-[#79231C] rounded-xl flex items-center gap-3 animate-fadeIn">
@@ -203,7 +231,7 @@ const MessageMe = () => {
         </form>
 
         {/* Additional Info */}
-        <div className="mt-8 flex flex-wrap justify-center gap-6 text-center">
+        <div ref={infoRef} className="mt-8 flex flex-wrap justify-center gap-6 text-center">
           <div className="bg-[#201011]/50 border border-[#79231C]/20 rounded-xl px-6 py-3 backdrop-blur-sm">
             <span className="text-[#E7CEB0]/40 font-oswald text-xs uppercase tracking-wider">Email</span>
             <p className="text-[#E7CEB0] font-oswald text-sm">umershakir987@gmail.com</p>

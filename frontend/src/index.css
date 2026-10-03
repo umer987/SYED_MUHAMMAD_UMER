@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
-
 @import "tailwindcss";
-
 
 @theme {
   --font-oswald: "Oswald", sans-serif;
@@ -18,11 +16,9 @@
   --bg-i:#201011;
   --c-text: #bab0b0;
   --color-muted: #85858f;
-
-
-
 }
-/* Scrollbar */
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -37,9 +33,10 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5a1b15;
+  background: #962820;
 }
-/* App.css */
+
+/* Typography classes */
 .portfolio-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 4rem;
@@ -47,11 +44,11 @@
 }
 .font-bebas {
   font-family: 'Bebas Neue', sans-serif;
-
 }
 .font-bebasl {
   font-family: 'Bebas Neue', sans-serif;
 }
+
 html {
   margin: 0;
   padding: 0;
@@ -59,6 +56,7 @@ html {
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *, *::before, *::after {
@@ -74,6 +72,13 @@ body {
   color: #fff;
   padding: 12px;
   background-color: black;
+  selection-background-color: #79231C;
+  selection-color: #E7CEB0;
+}
+
+::selection {
+  background: #79231C;
+  color: #E7CEB0;
 }
 
 @media (min-width: 640px) {
@@ -88,18 +93,40 @@ body {
   overflow-x: hidden;
 }
 
+/* Glow effects */
+.text-glow {
+  text-shadow: 0 0 16px rgba(231, 206, 176, 0.45);
+}
 
+.red-glow {
+  box-shadow: 0 0 25px rgba(121, 35, 28, 0.45);
+}
+
+/* Animations */
 @keyframes redBlink {
-  0%,
-  100% {
+  0%, 100% {
     background-color: var(--bg-red);
+    box-shadow: 0 0 4px #79231C;
   }
-
   50% {
     background-color: #ff0808;
+    box-shadow: 0 0 10px #ff0808;
   }
 }
 
 .red-blink {
   animation: redBlink 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(121, 35, 28, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 43, 43, 0.7);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
 }

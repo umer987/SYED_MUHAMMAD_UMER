@@ -1,11 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import api from "../api";
 import { FaArrowRight, FaGithub, FaExternalLinkAlt, FaTimes, FaCode, FaLaptopCode } from "react-icons/fa";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "./Navbar";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [selectedProject, setSelectedProject] = useState(null);
+    const headerRef = useRef(null);
+    const gridRef = useRef(null);
 
     useEffect(() => {
         const fetchProjects = async () => {
@@ -21,6 +27,33 @@ const Projects = () => {
         fetchProjects();
     }, []);
 
+    useEffect(() => {
+        if (headerRef.current) {
+            gsap.fromTo(
+                headerRef.current,
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+            );
+        }
+    }, []);
+
+    useEffect(() => {
+        if (projects.length > 0 && gridRef.current) {
+            gsap.fromTo(
+                gridRef.current.children,
+                { y: 40, opacity: 0, scale: 0.95 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                    stagger: 0.08,
+                    duration: 0.7,
+                    ease: "power3.out",
+                }
+            );
+        }
+    }, [projects]);
+
     return (
         <section className="min-h-screen bg-[#180809] py-8 sm:py-16 px-3 sm:px-6 lg:px-8 relative overflow-hidden">
           <Navbar/>
@@ -35,7 +68,7 @@ const Projects = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Creative Header */}
-                <div className="text-center mb-10 sm:mb-16 relative">
+                <div ref={headerRef} className="text-center mb-10 sm:mb-16 relative">
                     <div className="inline-block relative">
                         <span className="absolute -top-2 -left-2 w-3 h-3 bg-[#79231C] rotate-45"></span>
                         <span className="absolute -bottom-2 -right-2 w-3 h-3 bg-[#79231C] rotate-45"></span>
@@ -59,7 +92,7 @@ const Projects = () => {
                 </div>
 
                 {/* Projects Grid - More Creative Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <div
                             key={project._id}
