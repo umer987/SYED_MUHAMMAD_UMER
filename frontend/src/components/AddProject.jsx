@@ -2,29 +2,29 @@ import React from 'react';
 import api from '../api'
 
 const AddProject = () => {
-const handle_submit = async (e)=>{
-  e.preventDefault()
-    const formdata = new FormData(e.target)
-    api.post('/project/add-project' , formdata)
-    .then((res)=>{
-      alert("data upload successfully")
-    })
-    .catch((err)=>{
-      alert(err)
-    })
-  }
+  const handle_submit = async (e) => {
+    e.preventDefault()
 
+    const formdata = new FormData(e.target)
+
+    try {
+      await api.post('/project/add-project', formdata)
+      alert('data upload successfully')
+    } catch (err) {
+      alert(err?.response?.data?.message || err?.message || 'Project upload failed')
+    }
+  }
 
   return (
     <div className="flex items-center justify-center font-oswald w-full">
       <div className="bg-[#201011] border border-[#79231C] p-8 rounded-lg w-full max-w-2xl shadow-lg mt-8 mb-8">
         <h2 className="text-3xl text-white text-center mb-8 tracking-wide">UPLOAD NEW PROJECT</h2>
-        
-        <form className="flex flex-col gap-6" onSubmit={handle_submit}>
+
+        <form className="flex flex-col gap-6" method="POST" encType="multipart/form-data" onSubmit={handle_submit}>
           <div className="flex flex-col gap-2">
             <label className="text-gray-300 tracking-wider">PROJECT TITLE</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name='title'
               placeholder="e.g. Voice2Law Legal Assistant"
               className="bg-black border border-[#79231C] text-white p-3 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C]"
@@ -33,38 +33,46 @@ const handle_submit = async (e)=>{
 
           <div className="flex flex-col gap-2">
             <label className="text-gray-300 tracking-wider">CATEGORY</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name='category'
               placeholder="e.g. AI / Machine Learning"
               className="bg-black border border-[#79231C] text-white p-3 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C]"
             />
           </div>
 
-          {/* CHANGED TO FILE UPLOAD */}
           <div className="flex flex-col gap-2">
             <label className="text-gray-300 tracking-wider">PROJECT IMAGE</label>
-            <input 
-              type="file" 
+            <input
+              type="file"
               accept="image/*"
               name='image'
-              className="bg-black border border-[#79231C] text-gray-400 p-2 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C] 
+              className="bg-black border border-[#79231C] text-gray-400 p-2 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C]
                          file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-[#79231C] file:text-white file:font-oswald cursor-pointer hover:file:bg-red-900 transition-colors"
             />
           </div>
 
           <div className="flex flex-col gap-2">
+            <label className="text-gray-300 tracking-wider">DEPLOYED LINK</label>
+            <input
+              type="url"
+              name='liveLink'
+              placeholder="https://example.com"
+              className="bg-black border border-[#79231C] text-white p-3 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C]"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
             <label className="text-gray-300 tracking-wider">DESCRIPTION</label>
-            <textarea 
+            <textarea
               rows="5"
               placeholder="Describe the project..."
-              name='discription'
+              name='description'
               className="bg-black border border-[#79231C] text-white p-3 rounded focus:outline-none focus:ring-1 focus:ring-[#79231C] resize-none placeholder-gray-700"
             ></textarea>
           </div>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="mt-2 bg-[#79231C] hover:bg-red-900 text-white p-3 rounded tracking-widest transition-colors"
           >
             PUBLISH PROJECT
@@ -72,7 +80,12 @@ const handle_submit = async (e)=>{
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default AddProject;
+
+
+
+
+

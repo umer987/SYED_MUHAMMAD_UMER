@@ -18,9 +18,11 @@ app.use(async (req, res, next) => {
 // Add your Vercel frontend URL
 const allowedOrigins = [
     'http://localhost:5173',              // Local Vite dev
+    'http://127.0.0.1:5173',
     'http://localhost:3000',              // Local React dev
     'https://syed-m-umer.vercel.app',     // ← Your Vercel frontend
     'https://syed-muhammad-umer-89kg.vercel.app',
+    'https://syed-muhammad-umer-qrw5.vercel.app',
     process.env.FRONTEND_URL,
 ].filter(Boolean);
 

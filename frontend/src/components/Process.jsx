@@ -144,8 +144,19 @@ function Process() {
                                         </h3>
                                         
                                         <p className="font-oswald text-[var(--text-bg)] text-xs sm:text-sm font-extralight line-clamp-2 mt-1">
-                                            {project.discription}
+                                            {project.description || project.discription || 'Project showcase'}
                                         </p>
+                                        {project.liveLink && (
+                                            <a
+                                                href={project.liveLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="mt-3 flex w-fit items-center gap-2 bg-[var(--bg-red)] text-white font-oswald px-4 py-2 rounded-full text-[11px] hover:opacity-90 transition-opacity"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                LIVE DEMO <span className="text-sm">↗</span>
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             ))}

@@ -83,7 +83,7 @@ const Projects = () => {
                                     className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#180809] via-[#180809]/60 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
-                                
+
                                 {/* Creative Category Badge */}
                                 <div className="absolute top-4 left-4 flex items-center gap-2">
                                     <span className="bg-[#79231C] text-[#E7CEB0] text-xs font-oswald font-medium px-4 py-1.5 rounded-full shadow-lg transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
@@ -115,13 +115,26 @@ const Projects = () => {
                                     {project.title}
                                 </h2>
                                 <p className="font-oswald text-sm text-[#E7CEB0]/50 font-light leading-relaxed line-clamp-2">
-                                    {project.description}
+                                    {project.description || project.discription || 'Project showcase'}
                                 </p>
+
+                                {project.liveLink && (
+                                    <a
+                                        href={project.liveLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mt-4 inline-flex items-center justify-center gap-2 bg-[#E7CEB0] text-[#180809] font-oswald px-6 py-2 rounded-full shadow-xl border border-[#E7CEB0] hover:bg-[#79231C] hover:text-[#E7CEB0] transition-all duration-300"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        LIVE DEMO <span className="font-bold">↗</span>
+                                    </a>
+                                )}
+
                                 {project.technologies && project.technologies.length > 0 && (
                                     <div className="mt-4 flex flex-wrap gap-1.5">
                                         {project.technologies.slice(0, 3).map((tech, idx) => (
-                                            <span 
-                                                key={idx} 
+                                            <span
+                                                key={idx}
                                                 className="text-[10px] font-oswald text-[#E7CEB0]/40 border border-[#79231C]/20 px-2.5 py-1 rounded-full"
                                             >
                                                 {tech}
@@ -168,7 +181,7 @@ const Projects = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#201011] via-[#201011]/50 to-transparent"></div>
                                     <div className="absolute inset-0 bg-gradient-to-r from-[#180809]/50 to-transparent"></div>
-                                    
+
                                     {/* Creative Category in Modal */}
                                     <div className="absolute bottom-8 left-8 flex items-center gap-4">
                                         <span className="bg-[#79231C] text-[#E7CEB0] text-sm font-oswald font-medium px-6 py-2.5 rounded-full shadow-2xl transform -rotate-2">
@@ -192,7 +205,7 @@ const Projects = () => {
                                         </div>
 
                                         <p className="font-oswald text-base text-[#E7CEB0]/70 leading-relaxed mb-8 pl-3 border-l-2 border-[#79231C]/30">
-                                            {selectedProject.description}
+                                            {selectedProject.description || selectedProject.discription || 'Project showcase'}
                                         </p>
 
                                         {/* Technologies with Creative Display */}
@@ -220,16 +233,15 @@ const Projects = () => {
 
                                         {/* Creative Links */}
                                         <div className="flex flex-wrap gap-4 pt-6 border-t border-[#79231C]/20">
-                                            {selectedProject.link && (
+                                            {selectedProject.liveLink && (
                                                 <a
-                                                    href={selectedProject.link}
+                                                    href={selectedProject.liveLink}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-3 bg-[#79231C] text-[#E7CEB0] font-oswald px-8 py-3.5 rounded-full hover:bg-[#79231C]/80 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#79231C]/30 group"
+                                                    className="inline-flex items-center gap-3 bg-[#E7CEB0] text-[#180809] font-oswald px-8 py-3.5 rounded-full hover:bg-[#79231C] hover:text-[#E7CEB0] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#79231C]/30 group"
                                                 >
                                                     <FaExternalLinkAlt className="text-sm group-hover:rotate-12 transition-transform duration-300" />
-                                                    Live Project
-                                                    <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
+                                                    LIVE DEMO <span className="font-bold">↗</span>
                                                 </a>
                                             )}
                                             {selectedProject.github && (
