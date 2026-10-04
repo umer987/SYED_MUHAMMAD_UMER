@@ -431,11 +431,11 @@ function Hero() {
         {/* 2 - Image with interactive 3D parallax - pulled up over the heading */}
         <div
           ref={imageWrapperRef}
-          className="order-1 md:order-2 relative md:bottom-12 flex justify-center items-center w-full my-2 md:my-0 will-change-transform z-20 md:-mt-[150px]"
+          className="order-1 md:order-2 relative md:bottom-12 flex justify-center items-center w-full my-2 md:my-0 will-change-transform z-20 "
         >
           <div className="relative group">
-            <div className="absolute inset-0 bg-[#79231C]/20 rounded-full blur-2xl group-hover:bg-[#79231C]/35 transition-all duration-700 pointer-events-none"></div>
-            <img ref={imageRef} className='w-[240px] xs:w-[280px] sm:w-[320px] md:w-[500px] md:h-[480px] object-contain max-w-full relative z-10 drop-shadow-[0_15px_30px_rgba(121,35,28,0.35)]' src="/umer2.png" alt="Umer" />
+            <div className="absolute  inset-0 bg-[#79231C]/20 rounded-full blur-2xl group-hover:bg-[#79231C]/35 transition-all duration-700 pointer-events-none"></div>
+            <img ref={imageRef} className='w-[240px] xs:w-[280px] -mt-24 sm:w-[320px] md:w-[500px] md:h-[480px] object-contain max-w-full relative z-10 drop-shadow-[0_15px_30px_rgba(121,35,28,0.35)]' src="/umer2.png" alt="Umer" />
           </div>
         </div>
 

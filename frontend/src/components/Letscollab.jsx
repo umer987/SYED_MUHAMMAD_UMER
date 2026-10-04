@@ -166,7 +166,7 @@ function Letscollab() {
                         <div className="absolute inset-0 bg-[#79231C]/30 rounded-2xl blur-md group-hover:bg-[#ff2b2b]/40 transition-all duration-300"></div>
                         <img 
                             src="/linkdin.png" 
-                            className='w-[100px] h-[100px] sm:w-[130px] sm:h-[130px] lg:w-[150px] lg:h-[150px] rounded-2xl object-cover group-hover:scale-108 transition-all duration-300 border border-[#79231C]/60 group-hover:border-[#ff2b2b] shadow-xl relative z-10' 
+                            className='w-[150px] h-[150px] sm:w-[130px] sm:h-[130px] lg:w-[200px] lg:h-[200px] rounded-2xl object-cover group-hover:scale-108 transition-all duration-300 border border-[#79231C]/60 group-hover:border-[#ff2b2b] shadow-xl relative z-10' 
                             alt="LinkedIn" 
                         />
                     </div>
@@ -186,7 +186,7 @@ function Letscollab() {
                         <div className="absolute inset-0 bg-[#79231C]/30 rounded-2xl blur-md group-hover:bg-[#ff2b2b]/40 transition-all duration-300"></div>
                         <img 
                             src="/github.png" 
-                            className='w-[100px] h-[100px] sm:w-[130px] sm:h-[130px] lg:w-[150px] lg:h-[150px] rounded-2xl object-cover group-hover:scale-108 transition-all duration-300 border border-[#79231C]/60 group-hover:border-[#ff2b2b] shadow-xl relative z-10' 
+                            className='w-[150px] h-[150px] sm:w-[130px] sm:h-[130px] lg:w-[200px] lg:h-[200px] rounded-2xl object-cover group-hover:scale-108 transition-all duration-300 border border-[#79231C]/60 group-hover:border-[#ff2b2b] shadow-xl relative z-10' 
                             alt="GitHub" 
                         />
                     </div>

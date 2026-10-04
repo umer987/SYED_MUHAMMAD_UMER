@@ -340,7 +340,7 @@ function Aboutme() {
                 </div>
 
 
-                <div ref={toolsGridRef} className="flex flex-wrap items-center justify-center lg:justify-start gap-2 max-w-[480px]">
+                <div ref={toolsGridRef} className="flex flex-wrap items-center justify-center lg:justify-start gap-2 max-w-[680px]">
 
                     {projects.map((project) => (
                         <div
